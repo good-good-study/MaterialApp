@@ -1,0 +1,3 @@
+rootProject.name='MaterialStudyApp'
+include ':app', ':crop', ':banner'
+include ':mvvm'

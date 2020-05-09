@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    defaultConfig {
+        applicationId "com.sxt.chat"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        ant {
+            property(file: 'build.number')
+        }
+        def version = Integer.parseInt(ant.antProject.properties['build.number'])
+        versionCode = 200000 + version
+        versionName = String.format("2.0.%s", version)
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi-v7a', 'x86', 'x86_64'//, 'x86_64', 'arm64-v8a'
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../keys/wechart.jks")
+            storePassword "123456"
+            keyAlias "wechat"
+            keyPassword "123456"
+            v2SigningEnabled false
+        }
+
+        debug {
+            storeFile file("../keys/wechart.jks")
+            storePassword "123456"
+            keyAlias "wechat"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false //代码混淆
+            shrinkResources false //移除无用的resource文件
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug.initWith(buildTypes.release)
+        debug {
+            debuggable true
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "androidx.navigation:navigation-fragment:$rootProject.navigationVersion"
+    implementation "androidx.navigation:navigation-ui:$rootProject.navigationVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+    implementation "androidx.fragment:fragment:$rootProject.fragmentVersion"
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    implementation "com.google.android:flexbox:$rootProject.flexboxVersion"
+
+
+    implementation 'com.amap.api:location:4.6.0'//高德地图定位包
+    implementation 'com.amap.api:3dmap:7.4.0'//高德地图3d地图
+
+    //Bmob
+    implementation 'cn.bmob.android:bmob-sdk:3.7.8'
+    implementation "io.reactivex.rxjava2:rxjava:2.2.9"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.squareup.okio:okio:2.2.2'
+
+    //友盟统计
+    implementation 'com.umeng.umsdk:analytics:8.0.0'
+    implementation 'com.umeng.umsdk:common:2.0.0'
+
+    //Library
+    implementation project(path: ':mvvm')
+    implementation project(path: ':banner')
+    implementation project(path: ':crop')
+}

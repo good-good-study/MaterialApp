@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MD</string>
+    <!--高德地图的appKey 畅玩- Google Play 版-->
+    <!-- <string name="map_key">bc7d04743fd40d834d62b542490840be</string>-->
+    <!--高德地图的appKey 畅玩 -->
+    <string name="map_key">07c62c108f6a3c31b01c30334e0d831c</string>
+</resources>
