@@ -1,4 +1,4 @@
-package com.sxt.chat.base.viewmodel;
+package com.sxt.mvvm.base.viewmodel;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;

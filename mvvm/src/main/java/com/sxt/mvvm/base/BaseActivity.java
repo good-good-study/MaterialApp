@@ -1,4 +1,4 @@
-package com.sxt.chat.base;
+package com.sxt.mvvm.base;
 
 import android.os.Bundle;
 
@@ -9,26 +9,49 @@ import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.sxt.chat.base.viewmodel.BaseViewModel;
-import com.sxt.chat.base.viewmodel.IBase;
+import com.sxt.mvvm.base.viewmodel.BaseViewModel;
+import com.sxt.mvvm.base.viewmodel.IBase;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.commonsdk.UMConfigure;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+
+import kotlin.math.UMathKt;
 
 /**
  * Created by xt.sun
  * 2020/5/9
  */
 public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseViewModel> extends PermissionActivity implements IBase {
-    V binding;
-    VM viewModel;
+    public V binding;
+    public VM viewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCollector.addActivity(this);
         bindViewModel();
         initView();
         initObserver();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
     }
 
     /**

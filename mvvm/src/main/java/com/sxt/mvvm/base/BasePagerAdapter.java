@@ -1,4 +1,4 @@
-package com.sxt.chat.base;
+package com.sxt.mvvm.base;
 
 import android.content.Context;
 import android.view.View;

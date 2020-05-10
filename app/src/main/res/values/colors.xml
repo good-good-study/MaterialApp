@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimaryDark">#6200EE</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="text_color_1">#333333</color>
+    <color name="text_color_2">#666666</color>
+    <color name="text_color_3">#999999</color>
+    <color name="chipGreyColor">#EEEFEE</color>
+    <color name="chipRippleColor">#D7C7F7</color>
+
+    <color name="point_blue">#4B6DF4</color>
+    <color name="point_green">#A4D979</color>
+    <color name="point_yellow">#EF9543</color>
+    <color name="point_pink">#EB5281</color>
+    <color name="point_orange">#EE742F</color>
+    <color name="point_purple">#5353D5</color>
+    <color name="point_green_light">#C7F2CE</color>
+    <color name="point_yellow_light">#F1C1AC</color>
+    <color name="point_blue_light">#6CE3F9</color>
 </resources>

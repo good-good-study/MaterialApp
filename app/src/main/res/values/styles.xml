@@ -1,11 +1,41 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ToolBarLightStyle" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
+
+    <style name="tabTextAppearance">
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="tabText18Appearance">
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="chipTextAppearance">
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="ChipsStyle" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="chipBackgroundColor">@color/chipGreyColor</item>
+        <item name="rippleColor">@color/chipRippleColor</item>
+        <item name="android:textAppearance">@style/chipTextAppearance</item>
+        <item name="android:textColor">@color/text_color_1</item>
+        <item name="chipStartPadding">10dp</item>
+        <item name="chipEndPadding">6dp</item>
+        <item name="chipIconSize">20dp</item>
+        <item name="chipMinHeight">36dp</item>
+    </style>
 </resources>

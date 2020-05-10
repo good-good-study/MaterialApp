@@ -41,6 +41,7 @@ ext {
     fragmentVersion = '1.2.4'
     navigationVersion = '2.2.2'
     recyclerViewVersion = '1.2.0-alpha03'
+    constraintVersion = '2.0.0-beta5'
     glideVersion = '4.9.0'
     flexboxVersion = '2.0.1'
 

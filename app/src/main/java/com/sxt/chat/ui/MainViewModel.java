@@ -4,7 +4,7 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 
-import com.sxt.chat.base.viewmodel.BaseViewModel;
+import com.sxt.mvvm.base.viewmodel.BaseViewModel;
 
 /**
  * Created by xt.sun

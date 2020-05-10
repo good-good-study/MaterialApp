@@ -1,6 +1,8 @@
-package com.sxt.chat.utils;
+package com.sxt.mvvm.base;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,5 +45,12 @@ public class ActivityCollector {
                 activity.finish();
             }
         }
+    }
+
+    public static void startActivity(Context context, Class<? extends Activity> clazz) {
+        if (clazz == null) return;
+        Intent intent = new Intent(context, clazz);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

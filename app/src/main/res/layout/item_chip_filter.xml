@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.MaterialComponents.Chip.Filter"
+    android:textAppearance="@style/chipTextAppearance"
+    android:textColor="@color/text_color_1"
+    app:chipBackgroundColor="@color/chipGreyColor"
+    app:chipEndPadding="10dp"
+    app:chipIconSize="20dp"
+    app:chipMinHeight="36dp"
+    app:chipStartPadding="6dp"
+    app:rippleColor="@color/chipRippleColor" />

@@ -19,13 +19,20 @@
             android:name="android.notch_support"
             android:value="true" />
 
-        <activity android:name=".ui.MainActivity">
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.material.tablayout.TabLayoutActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor" />
+        <activity android:name=".ui.material.chips.ChipsActivity" />
         <!--高德地图-->
         <service android:name="com.amap.api.location.APSService" />
         <meta-data

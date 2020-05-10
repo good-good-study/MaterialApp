@@ -1,13 +1,8 @@
-package com.sxt.chat.base.viewmodel;
+package com.sxt.mvvm.base.viewmodel;
 
 import android.app.Application;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleOwner;
-
-import com.sxt.chat.base.viewmodel.IBaseObserver;
 
 /**
  * Created by xt.sun

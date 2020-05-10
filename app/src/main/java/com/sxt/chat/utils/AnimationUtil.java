@@ -14,6 +14,7 @@ import android.view.ViewAnimationUtils;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
+import android.view.animation.BounceInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
@@ -72,5 +73,24 @@ public class AnimationUtil {
         animatorSet.setInterpolator(new LinearInterpolator());
         animatorSet.playTogether(translationAnimator, alphaAnimator);
         animatorSet.start();
+    }
+
+    /**
+     * 缩放动画
+     */
+    public static void scale(View target, float startScale, float endScale, long duration, ValueAnimator.AnimatorUpdateListener... listeners) {
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(target, SCALE_X, startScale, endScale);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(target, SCALE_Y, startScale, endScale);
+        if (listeners != null) {
+            for (ValueAnimator.AnimatorUpdateListener listener : listeners) {
+                scaleX.addUpdateListener(listener);
+                scaleY.addUpdateListener(listener);
+            }
+        }
+        AnimatorSet set = new AnimatorSet();
+        set.playTogether(scaleX, scaleY);
+        set.setInterpolator(new BounceInterpolator());
+        set.setDuration(duration);
+        set.start();
     }
 }
