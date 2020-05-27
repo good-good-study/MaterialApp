@@ -6,13 +6,14 @@ import android.widget.CompoundButton;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
-import com.google.android.material.snackbar.Snackbar;
 import com.sxt.chat.R;
+import com.sxt.chat.app.ViewModelFactory;
 import com.sxt.chat.data.ChipData;
 import com.sxt.chat.databinding.ActivityChipsBinding;
-import com.sxt.chat.ui.material.tablayout.TabLayoutActivity;
-import com.sxt.mvvm.base.ActivityCollector;
-import com.sxt.mvvm.base.BaseActivity;
+import com.sxt.chat.ui.material.collapsing.CollapsingToolbarActivity;
+import com.sxt.chat.utils.SnackBarHelper;
+import com.sxt.mvvm.view.ActivityCollector;
+import com.sxt.mvvm.view.BaseActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -21,11 +22,19 @@ import java.util.List;
 /**
  * Created by xt.sun
  * 2020/5/10
+ * Chips
  */
 public class ChipsActivity extends BaseActivity<ActivityChipsBinding, ChipsViewModel> {
     @Override
     public int getDisplayView() {
         return R.layout.activity_chips;
+    }
+
+    @NotNull
+    @Override
+    public ChipsViewModel initViewModel() {
+        ViewModelFactory factory = ViewModelFactory.getInstance(getApplication());
+        return createViewModel(this, factory, ChipsViewModel.class);
     }
 
     @Override
@@ -36,25 +45,17 @@ public class ChipsActivity extends BaseActivity<ActivityChipsBinding, ChipsViewM
     @Override
     public void initObserver() {
         viewModel.chips.observe(this, this::bindChips);
-        viewModel.chipsAction.observe(this, this::bindChipsAction);
+        viewModel.chipsAction.observe(this, this::bindChipsFilter);
         viewModel.chipsEntry.observe(this, this::bindChipsEntry);
-        viewModel.buildChips();
-        viewModel.buildChipsAction();
-        viewModel.buildChipsEntry();
+        buildChipsAction();
     }
 
     private void setToolbar() {
-        setSupportActionBar(binding.toolbar);
-        binding.toolbar.setElevation(8);
-        binding.toolbar.setTitle("Chips");
-        binding.toolbar.setNavigationIcon(R.drawable.ic_navi_back);
-        binding.toolbar.setNavigationOnClickListener(v -> {
-            ActivityCollector.startActivity(this, TabLayoutActivity.class);
-        });
+        binding.toolbar.setNavigationOnClickListener(v -> finish());
     }
 
+    //Choice
     private void bindChips(List<ChipData> chips) {
-        //Choice
         ChipGroup choice = binding.chipsGroupChoice.chipGroup;
         for (ChipData data : chips) {
             Chip chip = getChoiceChip();
@@ -76,8 +77,8 @@ public class ChipsActivity extends BaseActivity<ActivityChipsBinding, ChipsViewM
         };
     }
 
-    private void bindChipsAction(List<ChipData> chips) {
-        //Filter
+    //Filter
+    private void bindChipsFilter(List<ChipData> chips) {
         ChipGroup filter = binding.chipsGroupFilter.chipGroup;
         for (ChipData data : chips) {
             Chip chip = getFilterChip();
@@ -86,21 +87,6 @@ public class ChipsActivity extends BaseActivity<ActivityChipsBinding, ChipsViewM
             //设置chip点击事件
             chip.setOnCheckedChangeListener(buildChipFilterListener(data));
         }
-        //Action
-        ChipGroup action = binding.chipsGroupAction.chipGroup;
-        action.setOnCheckedChangeListener(buildChipActionListener());
-    }
-
-    @NotNull
-    private ChipGroup.OnCheckedChangeListener buildChipActionListener() {
-        return (group, checkedId) -> {
-            Chip chip = group.findViewById(checkedId);
-            if (chip == null) return;
-            if (TextUtils.isEmpty(chip.getText())) return;
-            Snackbar.make(binding.coordinator, chip.getText(),
-                    Snackbar.LENGTH_SHORT)
-                    .show();
-        };
     }
 
     private CompoundButton.OnCheckedChangeListener buildChipFilterListener(ChipData data) {
@@ -112,14 +98,30 @@ public class ChipsActivity extends BaseActivity<ActivityChipsBinding, ChipsViewM
                 chip.setChipBackgroundColorResource(R.color.chipGreyColor);
             }
             if (!isChecked) return;
-            Snackbar.make(binding.coordinator, data.getTitle(),
-                    Snackbar.LENGTH_SHORT)
-                    .show();
+            SnackBarHelper.showSnackBarShort(binding.coordinatorLayout, data.getTitle(), v -> {
+            });
         };
     }
 
+    //Action
+    private void buildChipsAction() {
+        ChipGroup action = binding.chipsGroupAction.chipGroup;
+        action.setOnCheckedChangeListener(buildChipActionListener());
+    }
+
+    @NotNull
+    private ChipGroup.OnCheckedChangeListener buildChipActionListener() {
+        return (group, checkedId) -> {
+            Chip chip = group.findViewById(checkedId);
+            if (chip == null) return;
+            if (TextUtils.isEmpty(chip.getText())) return;
+            SnackBarHelper.showSnackBarShort(binding.coordinatorLayout, chip.getText(), v -> {
+            });
+        };
+    }
+
+    //Entry
     private void bindChipsEntry(List<ChipData> chips) {
-        //Entry
         ChipGroup entry = binding.chipsGroupEntry.chipGroup;
         for (ChipData data : chips) {
             Chip chip = getEntryChip();

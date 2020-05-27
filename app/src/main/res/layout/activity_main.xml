@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
-        android:id="@+id/container"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
 
-    </FrameLayout>
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/bottom_navi_height" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navi_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_navi_height"
+            android:layout_gravity="bottom"
+            android:longClickable="false"
+            app:elevation="16dp"
+            app:itemHorizontalTranslationEnabled="true"
+            app:itemIconSize="24dp"
+            app:itemRippleColor="@color/chipRippleColor"
+            app:itemTextAppearanceActive="@style/itemTextAppearanceActive"
+            app:itemTextAppearanceInactive="@style/itemTextAppearanceInactive"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_nav_menu" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

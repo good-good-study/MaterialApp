@@ -37,6 +37,7 @@ dependencies {
     api 'com.umeng.umsdk:analytics:8.0.0'
     api 'com.umeng.umsdk:common:2.0.0'
 
+    //liveData,viewModel
     api "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
     api "androidx.lifecycle:lifecycle-livedata:$rootProject.lifecycleVersion"
     api "androidx.lifecycle:lifecycle-viewmodel:$rootProject.lifecycleVersion"
@@ -44,6 +45,7 @@ dependencies {
     api "androidx.work:work-runtime:$rootProject.workVersion"
     api "com.google.code.gson:gson:$rootProject.gsonVersion"
 
+    //net
     api 'com.squareup.okhttp3:okhttp:4.2.2'
     api 'com.squareup.retrofit2:retrofit:2.4.0'
     api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'

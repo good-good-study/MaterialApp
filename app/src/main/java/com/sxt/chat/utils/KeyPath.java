@@ -1,6 +1,6 @@
 package com.sxt.chat.utils;
 
-import com.sxt.chat.App;
+import com.sxt.chat.app.App;
 
 import java.io.File;
 

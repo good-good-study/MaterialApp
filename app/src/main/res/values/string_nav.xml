@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bottom_nav_gallery">组件</string>
+    <string name="bottom_nav_find">发现</string>
+    <string name="bottom_nav_search">搜索</string>
+    <string name="bottom_nav_mine">我的</string>
+
+    <string name="bottom_nav_alarm">Alarm</string>
+    <string name="bottom_nav_clock">Clock</string>
+    <string name="bottom_nav_timer">Timer</string>
+    <string name="bottom_nav_stopwatch">Stopwatch</string>
+</resources>

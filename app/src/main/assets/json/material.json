@@ -1,0 +1,118 @@
+{
+  "configuration_version": "1",
+  "categories": [
+    {
+      "category": "TopAppBar",
+      "tag": [
+        "Basic",
+        "Scrolling",
+        "Context",
+        "Drawer",
+        "SnackBars"
+      ]
+    },
+    {
+      "category": "BottomAppBar",
+      "tag": [
+        "Positioning",
+        "Scrolling",
+        "SnackBars"
+      ]
+    },
+    {
+      "category": "BottomNavigation",
+      "tag": [
+        "Basic",
+        "Badges",
+        "Transitions",
+        "Animated"
+      ]
+    },
+    {
+      "category": "BottomSheet",
+      "tag": [
+        "Basic",
+        "Map",
+        "Float",
+        "Full"
+      ]
+    },
+    {
+      "category": "CardView",
+      "tag": [
+        "Basic",
+        "Selectable",
+        "Draggable",
+        "List With Drag",
+        "Swipe Dismiss",
+        "Collections",
+        "Scrolling"
+      ]
+    },
+    {
+      "category": "FloatActionButton",
+      "tag": [
+        "Basic",
+        "Tabbed Screens",
+        "Speed Dial",
+        "Transform",
+        "Morph",
+        "Full Screen",
+        "Expanded FAB"
+      ]
+    },
+    {
+      "category": "Chips",
+      "tag": [
+        "Transformative",
+        "Editable",
+        "Multiple",
+        "MoveAble",
+        "Expandable",
+        "Choice",
+        "Filter",
+        "Action",
+        "Entry"
+      ]
+    },
+    {
+      "category": "Tabs",
+      "tag": [
+        "Basic",
+        "Store",
+        "Icon",
+        "Icon&Text",
+        "Scroll"
+      ]
+    },
+    {
+      "category": "List",
+      "tag": [
+        "Transitions",
+        "Swipe",
+        "Draggable",
+        "Theme"
+      ]
+    },
+    {
+      "category": "SnackBar",
+      "tag": [
+        "Basic",
+        "Action",
+        "Lift Fab",
+        "Custom"
+      ]
+    },
+    {
+      "category": "Button",
+      "tag": [
+        "Text",
+        "Outlined",
+        "Contained",
+        "Toggle",
+        "Icon",
+        "Theming"
+      ]
+    }
+  ]
+}

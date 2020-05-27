@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.sxt.chat.R;
 import com.sxt.chat.data.ChipData;
-import com.sxt.mvvm.base.viewmodel.BaseViewModel;
+import com.sxt.mvvm.viewmodel.BaseViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,15 @@ public class ChipsViewModel extends BaseViewModel {
     public MutableLiveData<List<ChipData>> chipsAction = new MutableLiveData<>();
     public MutableLiveData<List<ChipData>> chipsEntry = new MutableLiveData<>();
 
-    public void buildChips() {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        buildChips();
+        buildChipsAction();
+        buildChipsEntry();
+    }
+
+    private void buildChips() {
         List<ChipData> chips = new ArrayList<>();
         chips.add(new ChipData(R.drawable.ic_chip_hotel, R.color.point_yellow_light, "Ads"));
         chips.add(new ChipData(R.drawable.ic_chip_coffee, R.color.point_green_light, "IOT"));
@@ -37,7 +45,7 @@ public class ChipsViewModel extends BaseViewModel {
         this.chips.setValue(chips);
     }
 
-    public void buildChipsAction() {
+    private void buildChipsAction() {
         List<ChipData> chips = new ArrayList<>();
         chips.add(new ChipData(R.drawable.ic_chip_home, R.color.point_blue, "Keynote"));
         chips.add(new ChipData(R.drawable.ic_chip_food, R.color.point_green, "Location / Maps"));
@@ -50,16 +58,16 @@ public class ChipsViewModel extends BaseViewModel {
         this.chipsAction.setValue(chips);
     }
 
-    public void buildChipsEntry() {
+    private void buildChipsEntry() {
         List<ChipData> chips = new ArrayList<>();
-        chips.add(new ChipData(R.drawable.ic_point_blue, R.color.point_orange, "Design"));
+        chips.add(new ChipData(R.drawable.ic_point_orange, R.color.point_orange, "Design"));
         chips.add(new ChipData(R.drawable.ic_point_green, R.color.point_green, "Android / Play"));
         chips.add(new ChipData(R.drawable.ic_point_yellow, R.color.point_yellow, "Assistant"));
         chips.add(new ChipData(R.drawable.ic_point_pink, R.color.point_pink, "Augmented"));
-        chips.add(new ChipData(R.drawable.ic_point_orange, R.color.point_blue, "Chrome OS"));
-        chips.add(new ChipData(R.drawable.ic_point_purple, R.color.point_yellow_light, "Cloud"));
+        chips.add(new ChipData(R.drawable.ic_point_orange, R.color.point_orange, "Chrome OS"));
+        chips.add(new ChipData(R.drawable.ic_point_purple, R.color.point_purple, "Cloud"));
         chips.add(new ChipData(R.drawable.ic_point_green_light, R.color.point_green_light, "Open Source"));
-        chips.add(new ChipData(R.drawable.ic_point_yellow_ligtht, R.color.point_purple, "Reality"));
+        chips.add(new ChipData(R.drawable.ic_point_yellow_ligtht, R.color.point_yellow_light, "Reality"));
         chips.add(new ChipData(R.drawable.ic_point_blue_light, R.color.point_blue_light, "Accessibility"));
         this.chipsEntry.setValue(chips);
     }

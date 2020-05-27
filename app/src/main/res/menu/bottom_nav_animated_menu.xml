@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:enabled="true"
+        android:icon="@drawable/asld_clock_alarm"
+        android:title="@string/bottom_nav_alarm" />
+    <item
+        android:enabled="true"
+        android:icon="@drawable/asld_clock_clock"
+        android:title="@string/bottom_nav_clock" />
+    <item
+        android:enabled="true"
+        android:icon="@drawable/asld_clock_timer"
+        android:title="@string/bottom_nav_timer" />
+    <item
+        android:enabled="true"
+        android:icon="@drawable/asld_clock_stopwatch"
+        android:title="@string/bottom_nav_stopwatch" />
+</menu>
+
+

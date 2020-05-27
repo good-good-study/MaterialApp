@@ -1,25 +1,72 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/main_body</item>
+        <item name="fontFamily">@font/open_sans_regular</item>
+        <item name="android:textSize">14dp</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyApp.SmallComponent
+        </item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyApp.MediumComponent
+        </item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MyApp.LargeComponent
+        </item>
+
     </style>
 
-    <style name="ToolBarLightStyle" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="ShapeAppearance.MyApp.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="ShapeAppearance.MyApp.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="ShapeAppearance.MyApp.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="ToolBarLightStyle" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
         <item name="android:layout_width">match_parent</item>
+        <item name="titleTextAppearance">@style/text20Appearance</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
         <item name="android:background">@color/colorPrimaryDark</item>
         <item name="titleTextColor">@color/white</item>
+        <item name="navigationIcon">@drawable/ic_navi_back</item>
+        <item name="popupTheme">@style/Theme.MaterialComponents.Light.DarkActionBar</item>
+        <item name="actionMenuTextAppearance">@style/menuTextAppearance</item>
+        <item name="actionOverflowMenuStyle">@style/menuTextAppearance</item>
     </style>
 
-    <style name="tabTextAppearance">
+    <style name="menuTextAppearance">
+        <item name="android:actionMenuTextColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="text20Appearance">
         <item name="android:textSize">20dp</item>
     </style>
 
-    <style name="tabText18Appearance">
+    <style name="text18Appearance">
         <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="text16Appearance">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="text14Appearance">
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="text24Appearance">
+        <item name="android:textSize">24dp</item>
     </style>
 
     <style name="chipTextAppearance">
@@ -38,4 +85,25 @@
         <item name="chipIconSize">20dp</item>
         <item name="chipMinHeight">36dp</item>
     </style>
+
+    <style name="expandedTitleTextAppearance">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="collapsedTitleTextAppearance">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="itemTextAppearanceActive">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="itemTextAppearanceInactive">
+        <item name="android:textColor">@color/text_color_2</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
 </resources>

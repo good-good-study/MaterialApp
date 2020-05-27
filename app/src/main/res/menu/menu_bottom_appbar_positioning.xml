@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/hide_fab"
+        android:title="HIDE  FAB"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/center"
+        android:title="CENTER"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/end"
+        android:title="END"
+        app:showAsAction="collapseActionView" />
+</menu>

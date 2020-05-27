@@ -1,11 +1,10 @@
 package com.sxt.chat.utils;
 
-import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 import androidx.core.content.ContextCompat;
 
-import com.sxt.chat.App;
+import com.sxt.chat.app.App;
 
 /**
  * Created by xt.sun

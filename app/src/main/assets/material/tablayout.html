@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net https://www.gstatic.com img.shields.io 'self' data:; script-src https://*.google.com http://*.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com survey.g.doubleclick.net 'unsafe-inline' 'self'; style-src https://fonts.googleapis.com/css https://feedback.googleusercontent.com https://www.gstatic.com 'unsafe-inline' 'self'; font-src https://fonts.gstatic.com/s/ 'self'; child-src https://feedback.googleusercontent.com http://www.google.com;">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta itemprop="name" content="Tab Layout - Material Components for Android"/>
+    <meta itemprop="image"
+          content="https://material.io/static/images/simple-lp/components-share.png"/>
+    <meta name="description" content="A horizontal layout to display tabs."/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Tab Layout - Material Components for Android"/>
+    <meta property="og:site_name" content="Material Components for Android"/>
+    <meta property="og:image"
+          content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Tab Layout"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description"
+          content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image"
+          content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192"
+          href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage"
+          content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async="" defer=""
+            src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+</head>
+<body class="page page--detail page--components page--platform-android">
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<div class="page__content page__flex-element">
+    <section class="page__main-section">
+        <article class="page__article article article--icon-tabs">
+            <h1 id="tab-layout">Tab Layout</h1>
+            <p><code>TabLayout</code> provides a horizontal layout to display tabs. The layout
+                handles
+                interactions for a group of tabs including:</p>
+            <ul>
+                <li>scrolling behavior,</li>
+                <li>(swipe) gestures,</li>
+                <li>tab selection,</li>
+                <li>animations,</li>
+                <li>and alignment.</li>
+            </ul>
+            <p>The Android Developers site provides
+                <a href="https://developer.android.com/reference/com/google/android/material/tabs/TabLayout">detailed
+                    documentation</a>
+                on implementing <code>TabLayout</code>.</p>
+            <h2 id="design--api-documentation">Design &amp; API Documentation</h2>
+            <ul class="icon-list">
+                <li class="icon-list-item icon-list-item--spec"><a
+                        href="https://material.io/go/design-tabs">Material Design guidelines:
+                    Tabs</a></li>
+                <li class="icon-list-item icon-list-item--link"><a
+                        href="https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/tabs/TabLayout.java">Class
+                    definition</a></li>
+                <li class="icon-list-item icon-list-item--link"><a
+                        href="https://developer.android.com/reference/com/google/android/material/tabs/TabLayout">Class
+                    overview</a></li>
+            </ul>
+            <h2 id="usage">Usage</h2>
+            <p>To use a <code>TabLayout</code> with a static number of tabs, define each tab as a
+                <code>TabItem</code> directly in the layout.</p>
+            <pre><code class="language-xml">&lt;com.google.android.material.tabs.TabLayout
+    android:id="@+id/tabs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"&gt;
+
+  &lt;com.google.android.material.tabs.TabItem
+      android:icon="@drawable/ic_icon_a_24"
+      android:text="@string/tab_a_label"/&gt;
+  &lt;com.google.android.material.tabs.TabItem
+      android:icon="@drawable/ic_icon_b_24"
+      android:text="@string/tab_b_label"/&gt;
+  &lt;com.google.android.material.tabs.TabItem
+      android:icon="@drawable/ic_icon_c_24"
+      android:text="@string/tab_c_label"/&gt;
+
+&lt;/com.google.android.material.tabs.TabLayout&gt;
+</code></pre>
+            <p>A tab layout should be used above the content associated with the respective
+                tabs and lets the user quickly change between content views. These content views
+                are often held in a
+                <a href="https://developer.android.com/reference/android/support/v4/view/ViewPager.html">ViewPager</a>.
+            </p>
+            <p>Use
+                <a href="https://developer.android.com/reference/com/google/android/material/tabs/TabLayout#setupWithViewPager\(ViewPager\)">setupWithViewPager(ViewPager)</a>
+                to link a <code>TabLayout</code> with a ViewPager. The individual tabs in the <code>TabLayout</code>
+                will be automatically populated with the page titles from the PagerAdapter.</p>
+            <pre><code class="language-java">ViewPager pager;
+TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
+
+tabs.setupWithViewPager(pager);
+</code></pre>
+            <p>Alternatively, you can add a <code>TabLayout</code> to a ViewPager in XML:</p>
+            <pre><code class="language-xml">&lt;androidx.viewpager.widget.ViewPager
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"&gt;
+
+  &lt;com.google.android.material.tabs.TabLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="top" /&gt;
+
+&lt;/androidx.viewpager.widget.ViewPager&gt;
+</code></pre>
+            <h3 id="badges">Badges</h3>
+            <p><img src="/components/images/content/e1674aeecd58f96dd9f2db8c433540ec.png"
+                    alt="TabLayout with badges"/></p>
+            <p><code>TabLayout</code> supports displaying icon and number badges.</p>
+            <pre><code class="language-java">// Creates and initializes an instance of BadgeDrawable associated with a tab.
+// Subsequent calls to this method will reuse the existing BadgeDrawable.
+// This method does not guarantee that the badge is visible.
+BadgeDrawable badge = tablayout.getTabAt(0).getOrCreateBadge();
+badge.setVisible(true);
+// Optionally show a number.
+badge.setNumber(99);
+</code></pre>
+            <p>NOTE: Don’t forget to remove any BadgeDrawables that are no longer needed.</p>
+            <pre><code class="language-java">tablayout.getTabAt(0).removeBadge();
+</code></pre>
+            <p>Best Practice: If you only need to temporarily hide the badge(e.g. until the
+                next notification is received), the recommended/lightweight alternative is to
+                change the visibility of the BadgeDrawable instead.</p>
+            <p>Please see <a href="/components/android/catalog/badging/"><code>BadgeDrawable</code></a>
+                for details on how to update the
+                badge content being displayed.</p>
+            <h3 id="material-styles">Material Styles</h3>
+            <p>Using <code>TabLayout</code> with an updated Material theme (<code>Theme.MaterialComponents</code>)
+                will provide the correct updated Material styles to your tabs by default. If you
+                need to use updated Material tabs and your application theme does not inherit
+                from an updated Material theme, you can apply one of the updated Material styles
+                directly to your widget in XML.</p>
+            <h4 id="updated-material-style-default">Updated Material Style (Default)</h4>
+            <p>The updated Material <code>TabLayout</code> style consists of updated icon and label
+                tints,
+                ripple color, and ripple shape.</p>
+            <pre><code class="language-xml">&lt;com.google.android.material.tabs.TabLayout
+    style="@style/Widget.MaterialComponents.TabLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/&gt;
+</code></pre>
+            <h4 id="colored-material-style">Colored Material Style</h4>
+            <p>The colored Material <code>TabLayout</code> style consists of updated background
+                color
+                based on <code>?attr/colorPrimary</code>.</p>
+            <pre><code class="language-xml">&lt;com.google.android.material.tabs.TabLayout
+    style="@style/Widget.MaterialComponents.TabLayout.Colored"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/&gt;
+</code></pre>
+            <h4 id="legacy-material-style">Legacy Material Style</h4>
+            <pre><code class="language-xml">&lt;com.google.android.material.tabs.TabLayout
+    style="@style/Widget.Design.TabLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/&gt;
+</code></pre>
+            <h3 id="attributes">Attributes</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Relevant attributes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Size</td>
+                    <td><code>app:tabMinWidth</code><br/>
+                        <code>app:tabMaxWidth</code></td>
+                </tr>
+                <tr>
+                    <td>Scroll</td>
+                    <td><code>app:tabMode</code></td>
+                </tr>
+                <tr>
+                    <td>Centered</td>
+                    <td><code>app:tabGravity</code></td>
+                </tr>
+                <tr>
+                    <td>Background</td>
+                    <td><code>app:tabBackground</code></td>
+                </tr>
+                <tr>
+                    <td>Icon</td>
+                    <td><code>app:tabIconTint</code><br/>
+                        <code>app:tabIconTintMode</code></td>
+                </tr>
+                <tr>
+                    <td>Label</td>
+                    <td><code>app:tabInlineLabel</code><br/>
+                        <code>app:tabTextAppearance</code><br/>
+                        <code>app:tabTextColor</code><br/>
+                        <code>app:tabSelectedTextColor</code></td>
+                </tr>
+                <tr>
+                    <td>Indicator</td>
+                    <td><code>app:tabIndicatorColor</code><br/>
+                        <code>app:tabIndicatorHeight</code><br/>
+                        <code>app:tabIndicator</code><br/>
+                        <code>app:tabIndicatorGravity</code><br/>
+                        <code>app:tabIndicatorFullWidth</code></td>
+                </tr>
+                <tr>
+                    <td>Position</td>
+                    <td><code>app:tabContentStart</code><br/>
+                        <code>app:tabPaddingStart</code><br/>
+                        <code>app:tabPaddingTop</code><br/>
+                        <code>app:tabPaddingEnd</code><br/>
+                        <code>app:tabPaddingBottom</code><br/>
+                        <code>app:tabPadding</code></td>
+                </tr>
+                <tr>
+                    <td>Ripple</td>
+                    <td><code>app:tabRippleColor</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <h3 id="theme-attribute-mapping">Theme Attribute Mapping</h3>
+            <h4 id="updated-material-style-default-1">Updated Material Style (Default)</h4>
+            <pre><code>style="@style/Widget.MaterialComponents.TabLayout"
+</code></pre>
+            <table>
+                <thead>
+                <tr>
+                    <th>Component Attribute</th>
+                    <th>Default Theme Attribute Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code>tabTextAppearance</code></td>
+                    <td><code>textAppearanceButton</code></td>
+                </tr>
+                <tr>
+                    <td><code>android:background</code></td>
+                    <td><code>colorSurface</code></td>
+                </tr>
+                <tr>
+                    <td><code>tabTextColor</code> (selected)</td>
+                    <td><code>colorPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><code>tabTextColor</code></td>
+                    <td><code>colorOnSurface</code> at 60% opacity</td>
+                </tr>
+                <tr>
+                    <td><code>tabIconTint</code> (selected)</td>
+                    <td><code>colorPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><code>tabIconTint</code></td>
+                    <td><code>colorOnSurface</code> at 60% opacity</td>
+                </tr>
+                <tr>
+                    <td><code>tabRippleColor</code></td>
+                    <td><code>colorPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><code>tabIndicatorColor</code></td>
+                    <td><code>colorPrimary</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="colored-material-style-1">Colored Material Style</h4>
+            <pre><code>style="@style/Widget.MaterialComponents.TabLayout.Colored"
+</code></pre>
+            <table>
+                <thead>
+                <tr>
+                    <th>Component Attribute</th>
+                    <th>Default Theme Attribute Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code>tabTextAppearance</code></td>
+                    <td><code>textAppearanceButton</code></td>
+                </tr>
+                <tr>
+                    <td><code>android:background</code></td>
+                    <td><code>colorPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><code>tabTextColor</code> (selected)</td>
+                    <td><code>colorOnPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><code>tabTextColor</code></td>
+                    <td><code>colorOnPrimary</code> at 60% opacity</td>
+                </tr>
+                <tr>
+                    <td><code>tabIconTint</code> (selected)</td>
+                    <td><code>colorOnPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><code>tabIconTint</code></td>
+                    <td><code>colorOnPrimary</code> at 60% opacity</td>
+                </tr>
+                <tr>
+                    <td><code>tabRippleColor</code></td>
+                    <td><code>colorOnPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><code>tabIndicatorColor</code></td>
+                    <td><code>colorOnPrimary</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="legacy-material-style-1">Legacy Material Style</h4>
+            <pre><code>style="@style/Widget.Design.TabLayout"
+</code></pre>
+            <p>The legacy Material style of <code>TabLayout</code> does not make use of our new
+                theming
+                attributes.</p>
+        </article>
+        <footer class="footer">
+            <section class="footer__content">
+                <div class="footer__row">
+                    <a class="footer__logo-link" href="/">
+                        <div class="footer__logo"></div>
+                    </a>
+                    <div class="footer__copy">
+                        <p class="footer__description">Material design is an adaptable system—backed
+                            by open-source code—guiding you in the principles and best practices of
+                            contemporary UI. Material helps teams streamline the designer-developer
+                            collaboration, reduce complexity, and enable fidelity through reusable
+                            components, patterns, and code libraries. All while adapting easily to
+                            your brand, platform, and users’ needs.</p>
+                        <nav class="footer__navigation">
+                            <ul class="footer__navigation-list">
+                                <li class="footer__navigation-list-item">
+                                    <a href="https://www.github.com/material-components"
+                                       target="_blank"
+                                       class="footer-block__social-nav-link">
+                                        Github
+                                    </a>
+                                </li>
+                                <li class="footer__navigation-list-item">
+                                    <a href="https://www.twitter.com/materialdesign"
+                                       target="_blank"
+                                       class="footer-block__social-nav-link">
+                                        Twitter
+                                    </a>
+                                </li>
+                                <li class="footer__navigation-list-item">
+                                    <a href="https://www.youtube.com/googledesign"
+                                       target="_blank"
+                                       class="footer-block__social-nav-link">
+                                        YouTube
+                                    </a>
+                                </li>
+                                <li class="footer__navigation-list-item">
+                                    <a href="https://services.google.com/fb/forms/materialdesignnewsletter/"
+                                       target="_blank"
+                                       class="footer-block__social-nav-link"
+                                       aria-label="Sign up for our newsletter">
+                                        Subscribe for updates
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer__row footer-legal">
+                    <a class="footer-legal__logo-container" href="https://google.com">
+                        <img src="/develop/images/google-logo-gray.svg" alt="Google"/>
+                    </a>
+                    <ul class="footer-legal__nav-list">
+                        <li class="footer-legal__nav-list-item">
+                            <a href="https://policies.google.com/privacy"
+                               target="_blank"
+                               class="footer-legal__nav-list-link">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="footer-legal__nav-list-item">
+                            <a href="https://policies.google.com/terms"
+                               target="_blank"
+                               class="footer-legal__nav-list-link">
+                                Terms and Conditions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </footer>
+    </section>
+</div>
+<template id="language-radio-template">
+    <div class="mdc-form-field">
+        <div class="mdc-radio">
+            <input class="mdc-radio__native-control"
+                   type="radio"
+                   id="" name="" value="">
+            <div class="mdc-radio__background">
+                <div class="mdc-radio__outer-circle"></div>
+                <div class="mdc-radio__inner-circle"></div>
+            </div>
+        </div>
+        <label class="language-name" for=""></label>
+    </div>
+</template>
+<button
+        class="feedback-button"
+        aria-label="Send Feedback"
+        tabindex="0">
+</button>
+<script src="/develop/js/index.js" async></script>
+<script src="https://www.gstatic.com/feedback/api.js" async></script>
+</body>
+</html>

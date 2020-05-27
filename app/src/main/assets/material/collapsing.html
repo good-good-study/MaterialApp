@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net https://www.gstatic.com img.shields.io 'self' data:; script-src https://*.google.com http://*.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com survey.g.doubleclick.net 'unsafe-inline' 'self'; style-src https://fonts.googleapis.com/css https://feedback.googleusercontent.com https://www.gstatic.com 'unsafe-inline' 'self'; font-src https://fonts.gstatic.com/s/ 'self'; child-src https://feedback.googleusercontent.com http://www.google.com;">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <meta itemprop="name" content="Collapsing Toolbars - Material Components for Android" />
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png" />
+    <meta name="description" content="Collapsing toolbars change height and other visual aspects in response to scrolling." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Collapsing Toolbars - Material Components for Android" />
+    <meta property="og:site_name" content="Material Components for Android" />
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Collapsing Toolbars" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async="" defer="" src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--detail page--components page--platform-android">
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <section class="page__main-section">
+        <article class="page__article article article--icon-toolbar">
+          <h1 id="collapsing-toolbars">Collapsing Toolbars</h1>
+          <p class="article__asset article__asset--screenshot"><img src="/components/images/content/d203ad78dbafae5e4928b640faeb6c65.svg" alt="Collapsing Toolbars" /></p>
+          <p><code>CollapsingToolbarLayout</code> is a <code>ViewGroup</code> that provides many of the visual
+            characteristics and interactions for <strong>collapsing toolbars</strong> specified in the
+            material guidelines. To create the collapsing toolbar, <code>CollapsingToolbarLayout</code>
+            integrates with
+            <a href="https://developer.android.com/reference/com/google/android/material/appbar/AppBarLayout"><code>AppBarLayout</code></a>,
+            <a href="https://developer.android.com/reference/androidx/coordinatorlayout/widget/CoordinatorLayout"><code>CoordinatorLayout</code></a>,
+            <a href="https://developer.android.com/reference/android/support/v7/widget/Toolbar.html"><code>Toolbar</code></a>,
+            and a scrollable content view, such as
+            <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html"><code>RecyclerView</code></a>.</p>
+          <h2 id="design--api-documentation">Design &amp; API Documentation</h2>
+          <ul class="icon-list">
+            <li class="icon-list-item icon-list-item--spec"><a href="https://material.io/design/layout/responsive-layout-grid.html#ui-regions">Material Design guidelines: UI regions</a></li>
+            <li class="icon-list-item icon-list-item--spec"><a href="https://material.io/components/app-bars-top/#behavior">Material Design guidelines: Scrolling app bar behavior</a></li>
+            <li class="icon-list-item icon-list-item--link"><a href="https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/appbar/CollapsingToolbarLayout.java">Class definition</a></li>
+            <li class="icon-list-item icon-list-item--link"><a href="https://developer.android.com/reference/com/google/android/material/appbar/CollapsingToolbarLayout">Class overview</a></li>
+          </ul>
+          <h2 id="usage">Usage</h2>
+          <p>To add a collapsing toolbar to your layout, place the <code>CollapsingToolbarLayout</code>
+            inside an <code>AppBarLayout</code>. Then, add a <code>Toolbar</code> and any other views as a child
+            to the <code>CollapsingToolbarLayout</code>. Make sure that the entire view structure is
+            inside a <code>CoordinatorLayout</code> to take advantage of <code>CollapsingToolbarLayout</code>’s
+            scrolling and features.</p>
+          <p>A layout with a collapsing toolbar might look something like this:</p>
+          <pre><code class="language-xml">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"&gt;
+
+    &lt;!-- Scrollable view here --&gt;
+
+  &lt;com.google.android.material.appbar.AppBarLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/tall_toolbar_height"&gt;
+
+    &lt;com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:contentScrim="?attr/colorPrimary"
+        app:expandedTitleGravity="top"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"&gt;
+
+      &lt;androidx.appcompat.widget.Toolbar
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          app:layout_collapseMode="pin"/&gt;
+    &lt;/com.google.android.material.appbar.CollapsingToolbarLayout&gt;
+  &lt;/com.google.android.material.appbar.AppBarLayout&gt;
+&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;
+</code></pre>
+          <p>A common collapsing toolbar pattern is the parallax image scroll, in which
+            images or other children of the <code>CollapsingToolbarLayout</code> scroll at different
+            rates than their siblings. To achieve this effect, add an
+            <a href="https://developer.android.com/reference/android/widget/ImageView.html"><code>ImageView</code></a>
+            and any other views as children of the <code>CollapsingToolbarLayout</code>. Specify parallax
+            multipliers in the XML for as many of the siblings as you like.</p>
+          <p>A toolbar with a collapsing image might look something like this:</p>
+          <pre><code class="language-xml">&lt;com.google.android.material.appbar.CollapsingToolbarLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:contentScrim="?attr/colorPrimary"
+    app:expandedTitleGravity="top"
+    app:expandedTitleMarginStart="@dimen/shrine_toolbar_offset_start"
+    app:expandedTitleMarginTop="@dimen/shrine_toolbar_offset_top"
+    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"&gt;
+
+  &lt;ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/shrine_toolbar_image_offset_top"
+      app:layout_collapseMode="parallax"
+      app:layout_collapseParallaxMultiplier="0.5"/&gt;
+
+  &lt;androidx.appcompat.widget.Toolbar
+      android:id="@+id/AppBar"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/shrine_toolbar_collapsed_height"
+      app:layout_collapseMode="pin"/&gt;
+&lt;/com.google.android.material.appbar.CollapsingToolbarLayout&gt;
+</code></pre>
+          <p>You can combine the basic collapsing toolbar with scroll flags,
+            <code>CollapsingToolbarLayout</code>’s attributes, <code>TabViewLayout</code>, or any other view you
+            would like to achieve your desired toolbar.</p>
+          <ul>
+            <li>Make sure to call
+              <a href="https://developer.android.com/reference/com/google/android/material/appbar/CollapsingToolbarLayout#setTitle(java.lang.CharSequence)"><code>setTitle()</code></a>
+              on the <code>CollapsingToolbarLayout</code> instead of the <code>Toolbar</code>. This allows
+              <code>CollapsingToolbarLayout</code> the ability to resize the title based on the
+              toolbar’s current size.</li>
+            <li>You can add as many views as you like to the <code>CollapsingToolbarLayout</code>, but
+              make sure that the <code>Toolbar</code> is the last child of the
+              <code>CollapsingToolbarLayout</code>. This ensures that the views are drawn in the
+              correct order.</li>
+            <li>The scrolling content should be placed in a
+              <a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html"><code>RecyclerView</code></a>,
+              <a href="https://developer.android.com/reference/android/support/v4/widget/NestedScrollView.html"><code>NestedScrollView</code></a>,
+              or another view that supports nested scrolling.</li>
+          </ul>
+          <h2 id="related-concepts">Related Concepts</h2>
+          <ul>
+            <li><a href="https://developer.android.com/reference/com/google/android/material/appbar/AppBarLayout">AppBarLayout</a></li>
+            <li><a href="https://developer.android.com/reference/com/google/android/material/tabs/TabLayout">TabLayout</a></li>
+          </ul>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link" href="/">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system—backed by open-source code—guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users’ needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://services.google.com/fb/forms/materialdesignnewsletter/"
+                  target="_blank"
+                  class="footer-block__social-nav-link"
+                  aria-label="Sign up for our newsletter">
+                        Subscribe for updates
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google" />
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control"
+             type="radio"
+             id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button
+    class="feedback-button"
+    aria-label="Send Feedback"
+    tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+</html>

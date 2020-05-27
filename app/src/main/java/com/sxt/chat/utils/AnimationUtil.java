@@ -32,7 +32,7 @@ import static android.view.View.GONE;
 public class AnimationUtil {
     public static final String TAG = "AnimationUtil";
     public static int ANIMATION_DURATION_SHORT = 200;
-    public static int ANIMATION_DURATION_MEDIUM = 400;
+    public static int ANIMATION_DURATION_MEDIUM = 500;
     public static int ANIMATION_DURATION_LONG = 800;
 
     public static final String SCALE_X = "scaleX";
@@ -52,6 +52,16 @@ public class AnimationUtil {
         boolean onAnimationEnd(View view);
 
         boolean onAnimationCancel(View view);
+    }
+
+    /**
+     * 旋转动画
+     */
+    public static void rotation(View target, float startAngle, float endAngle, long... durations) {
+        long duration = durations == null || durations.length == 0 ? ANIMATION_DURATION_SHORT : durations[0];
+        ObjectAnimator rotation = ObjectAnimator.ofFloat(target, "rotation", startAngle, endAngle);
+        rotation.setDuration(duration);
+        rotation.start();
     }
 
     /**

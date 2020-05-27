@@ -1,5 +1,6 @@
 package com.sxt.chat.ui.material.tablayout;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,12 +12,16 @@ import androidx.databinding.DataBindingUtil;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.tabs.TabLayout;
 import com.sxt.chat.R;
+import com.sxt.chat.app.ViewModelFactory;
 import com.sxt.chat.databinding.FragmentTablayoutBinding;
 import com.sxt.chat.databinding.ItemPagerBinding;
+import com.sxt.chat.ui.material.collapsing.CollapsingToolbarActivity;
 import com.sxt.chat.utils.Strings;
-import com.sxt.mvvm.base.BaseActivity;
-import com.sxt.mvvm.base.BasePagerAdapter;
-import com.sxt.mvvm.base.viewmodel.BaseViewModel;
+import com.sxt.mvvm.view.BaseActivity;
+import com.sxt.mvvm.view.BasePagerAdapter;
+import com.sxt.mvvm.viewmodel.BaseViewModel;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Random;
@@ -36,9 +41,16 @@ public class TabLayoutActivity extends BaseActivity<FragmentTablayoutBinding, Ba
         return R.layout.fragment_tablayout;
     }
 
+    @NotNull
+    @Override
+    public BaseViewModel initViewModel() {
+        ViewModelFactory factory = ViewModelFactory.getInstance(getApplication());
+        return createViewModel(this, factory, BaseViewModel.class);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.item_menu_tablayout, menu);
+        getMenuInflater().inflate(R.menu.menu_tablayout, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -72,11 +84,6 @@ public class TabLayoutActivity extends BaseActivity<FragmentTablayoutBinding, Ba
         setToolbar();
         setTabs();
         setViewPager();
-    }
-
-    @Override
-    public void initObserver() {
-
     }
 
     private void setToolbar() {
@@ -135,8 +142,13 @@ public class TabLayoutActivity extends BaseActivity<FragmentTablayoutBinding, Ba
             badge.setBackgroundColor(Color.RED);
             badge.setBadgeTextColor(Color.WHITE);
             badge.setMaxCharacterCount(3);
-            badge.setNumber(i * (new Random().nextInt(100)) + 1);
-            badge.setVisible(true, true);
+            if (i == 0) {//显示自定义的文本
+                badge.setContentDescriptionNumberless("·");
+            } else {
+                //显示数字气泡
+                badge.setNumber(i * (new Random().nextInt(100)) + 1);
+            }
+            badge.setVisible(true);
         }
     }
 

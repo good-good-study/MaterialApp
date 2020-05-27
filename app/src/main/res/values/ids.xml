@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="theme_light" type="id" />
+    <item name="theme_dark" type="id" />
+    <item name="theme_default" type="id" />
+
+    <item name="move_card_top_left_action" type="id" />
+    <item name="move_card_top_right_action" type="id" />
+    <item name="move_card_bottom_left_action" type="id" />
+    <item name="move_card_bottom_right_action" type="id" />
+    <item name="move_card_center_action" type="id" />
+    <item name="move_card_down_action" type="id" />
+    <item name="move_card_up_action" type="id" />
+</resources>

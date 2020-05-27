@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/full_width"
+        android:title="Full - Width"/>
+    <item
+        android:id="@+id/fixed_width"
+        android:title="Fixed - Width" />
+    <item
+        android:id="@+id/badge_enable"
+        android:title="Badge - Enable" />
+    <item
+        android:id="@+id/badge_disable"
+        android:title="Badge - Disable" />
+</menu>

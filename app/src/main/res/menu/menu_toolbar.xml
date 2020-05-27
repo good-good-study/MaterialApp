@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/favorite"
+        android:icon="@drawable/ic_navi_favorite"
+        android:title="search"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_navi_search"
+        android:title="search"
+        app:showAsAction="always" />
+    <item
+        android:title="MenuA"
+        app:showAsAction="ifRoom" />
+    <item
+        android:title="MenuB"
+        app:showAsAction="ifRoom" />
+    <item
+        android:icon="@drawable/ic_chip_hotel"
+        android:title="MenuC"
+        app:showAsAction="withText" />
+</menu>

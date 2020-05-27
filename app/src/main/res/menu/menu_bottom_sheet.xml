@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/ic_navi_account_wallet"
+        android:title="wallet has no money" />
+    <item
+        android:icon="@drawable/ic_navi_pets"
+        android:title="pets where are you from" />
+    <item
+        android:icon="@drawable/ic_navi_book"
+        android:title="book life color" />
+    <item
+        android:icon="@drawable/ic_navi_car"
+        android:title="car dring a car" />
+    <item
+        android:icon="@drawable/ic_navi_rotation"
+        android:title="rotation screen" />
+    <item
+        android:icon="@drawable/ic_navi_toys"
+        android:title="toys spring wind " />
+    <item
+        android:icon="@drawable/ic_navi_wifi_tethering"
+        android:title="wifi_tethering" />
+    <item
+        android:icon="@drawable/ic_navi_whatshot"
+        android:title="whatshot fire" />
+    <item
+        android:icon="@drawable/ic_navi_subscriptions"
+        android:title="subscriptions" />
+    <item
+        android:icon="@drawable/ic_navi_style"
+        android:title="style" />
+</menu>

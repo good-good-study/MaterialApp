@@ -88,4 +88,5 @@ dependencies {
     implementation project(path: ':mvvm')
     implementation project(path: ':banner')
     implementation project(path: ':crop')
+    implementation 'androidx.annotation:annotation:1.1.0'
 }

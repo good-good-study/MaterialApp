@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name=".App"
+        android:name=".app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,7 +32,30 @@
             android:name=".ui.material.tablayout.TabLayoutActivity"
             android:launchMode="singleTop"
             android:screenOrientation="fullSensor" />
-        <activity android:name=".ui.material.chips.ChipsActivity" />
+        <activity
+            android:name=".ui.material.chips.ChipsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".ui.material.tablayout.CollapsingTabActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor" />
+        <activity android:name=".ui.material.collapsing.CollapsingActivity" />
+        <activity android:name=".ui.material.toolbar.ToolbarActivity" />
+        <activity android:name=".ui.material.collapsing.CollapsingToolbarActivity" />
+        <activity android:name=".ui.material.bottomAppbar.BottomAppbarActivity" />
+        <activity android:name=".ui.material.bottomAppbar.BottomAppbarPositioningActivity" />
+        <activity android:name=".ui.material.bottomAppbar.BottomAppbarSnackBarActivity" />
+        <activity android:name=".ui.material.bottomNavogation.BottomNavigationActivity" />
+        <activity android:name=".ui.material.bottomNavogation.BottomNavigationBadgeActivity" />
+        <activity android:name=".ui.material.bottomNavogation.BottomNavigationTransitionsActivity" />
+        <activity android:name=".ui.material.cards.CardViewActivity" />
+        <activity android:name=".ui.material.cards.CardViewSelectableActivity" />
+        <activity android:name=".ui.material.cards.CardViewDraggableActivity" />
+        <activity android:name=".ui.material.cards.CardViewSwipeActivity" />
+        <activity android:name=".ui.material.bottomNavogation.BottomNavigationAnimatedActivity" />
+        <activity android:name=".ui.material.cards.CardViewListDragActivity" />
+        <activity android:name=".ui.material.bottomSheet.BottomSheetActivity" />
         <!--高德地图-->
         <service android:name="com.amap.api.location.APSService" />
         <meta-data

@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net https://www.gstatic.com img.shields.io 'self' data:; script-src https://*.google.com http://*.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com survey.g.doubleclick.net 'unsafe-inline' 'self'; style-src https://fonts.googleapis.com/css https://feedback.googleusercontent.com https://www.gstatic.com 'unsafe-inline' 'self'; font-src https://fonts.gstatic.com/s/ 'self'; child-src https://feedback.googleusercontent.com http://www.google.com;">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta itemprop="name" content="Top app bars - Material Components for Android"/>
+    <meta itemprop="image"
+          content="https://material.io/static/images/simple-lp/components-share.png"/>
+    <meta name="description" content="Android top app bar."/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Top app bars - Material Components for Android"/>
+    <meta property="og:site_name" content="Material Components for Android"/>
+    <meta property="og:image"
+          content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Top app bars"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description"
+          content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image"
+          content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192"
+          href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage"
+          content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async="" defer=""
+            src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+</head>
+<body class="page page--detail page--components page--platform-android">
+<div class="page__content page__flex-element">
+    <section class="page__main-section">
+        <article class="page__article article article--icon-top_app_bar">
+            <h1 id="top-app-bars">Top app bars</h1>
+            <p><a href="https://material.io/components/app-bars-top/#">Top app bars</a> display
+                information and actions relating to the current screen.</p>
+            <p><img src="/components/images/content/0888e4fa8733df88d3036e8cc158892d.png"
+                    alt="&quot;Top app bar on a screen&quot;"/></p>
+            <h2 id="contents">Contents</h2>
+            <ul>
+                <li><a href="#using-top-app-bars">Using top app bars</a></li>
+                <li><a href="#regular-top-app-bar">Regular top app bar</a></li>
+                <li><a href="#contextual-action-bar">Contextual action bar</a></li>
+                <li><a href="#theming-the-top-app-bar">Theming</a></li>
+            </ul>
+            <h2 id="using-top-app-bars">Using top app bars</h2>
+            <p>Before you can use Material top app bars, you need to add a dependency to the
+                Material Components for Android library. For more information, go to the
+                <a href="https://www.github.com/material-components/material-components-android/blob/master/docs/getting-started.md">Getting
+                    started</a>
+                page.</p>
+            <h3 id="making-top-app-bars-accessible">Making top app bars accessible</h3>
+            <p>Android’s top app bar component APIs provide support for the navigation icon,
+                action items, overflow menu and more for informing the user as to what each
+                action performs. While optional, their use is strongly encouraged.</p>
+            <h4 id="content-descriptions">Content descriptions</h4>
+            <p>When using icons for navigation icons, action items and other elements of top
+                app bars, you should set a content description on them so that screen readers
+                like TalkBack are able to announce their purpose or action, if any.</p>
+            <p>For an overall content description of the top app bar, set an
+                <code>android:contentDescription</code> or use the
+                <code>setContentDescription</code> method on the
+                <code>MaterialToolbar</code>.</p>
+            <p>For the navigation icon, this can be achieved via the
+                <code>app:navigationContentDescription</code> attribute or
+                <code>setNavigationContentDescription</code> method.</p>
+            <p>For action items and items within the overflow menu, the content description
+                needs to be set in the menu:</p>
+            <pre><code class="language-xml">&lt;menu ...&gt;
+    ...
+    &lt;item
+          ...
+          android:contentDescription="@string/content_description_one" /&gt;
+    &lt;item
+          ...
+          android:contentDescription="@string/content_description_two" /&gt;
+&lt;/menu&gt;
+</code></pre>
+            <p>For images within promininent top app bars, set an
+                <code>android:contentDescription</code>
+                or use the <code>setContentDescription</code> method on the <code>ImageView</code>.
+            </p>
+            <h2 id="types">Types</h2>
+            <p>There are two types of top app bar: 1.
+                <a href="#regular-top-app-bar">Regular top app bar</a>, 2.
+                <a href="#contextual-action-bar">Contextual action bar</a></p>
+            <p><img src="/components/images/content/e549e5ea82443f3f8f97eb8ff09066f5.png" alt="Top app bar examples of both regular and contextual action bar types. The
+regular top app bar shows a purple background with white icons and text. The
+contextual action bar shows a dark grey background with white icons and
+text."/></p>
+            <h2 id="regular-top-app-bar">Regular top app bar</h2>
+            <p>The top app bar provides content and actions related to the current screen. It’s
+                used for branding, screen titles, navigation, and actions.</p>
+            <h3 id="regular-top-app-bar-examples">Regular top app bar examples</h3>
+            <p>API and source code:</p>
+            <ul>
+                <li><code>CoordinatorLayout</code>
+                    <ul>
+                        <li>
+                            <a href="https://developer.android.com/reference/androidx/coordinatorlayout/widget/CoordinatorLayout">Class
+                                definition</a></li>
+                    </ul>
+                </li>
+                <li><code>AppBarLayout</code>
+                    <ul>
+                        <li>
+                            <a href="https://developer.android.com/reference/com/google/android/material/appbar/AppBarLayout">Class
+                                definition</a></li>
+                        <li>
+                            <a href="https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/appbar/AppBarLayout.java">Class
+                                source</a></li>
+                    </ul>
+                </li>
+                <li><code>MaterialToolbar</code>
+                    <ul>
+                        <li>
+                            <a href="https://developer.android.com/reference/com/google/android/material/appbar/MaterialToolbar">Class
+                                definition</a></li>
+                        <li>
+                            <a href="https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/appbar/MaterialToolbar.java">Class
+                                source</a></li>
+                    </ul>
+                </li>
+                <li><code>CollapsingToolbarLayout</code>
+                    <ul>
+                        <li>
+                            <a href="https://developer.android.com/reference/com/google/android/material/appbar/CollapsingToolbarLayout">Class
+                                definition</a></li>
+                        <li>
+                            <a href="https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/appbar/CollapsingToolbarLayout.java">Class
+                                source</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>The following example shows a top app bar with a page title, a navigation icon,
+                two action icons, and an overflow menu.</p>
+            <p><img src="/components/images/content/e781023c814eb5dbec071971e9ad6182.png"
+                    alt="Regular app bar example with purple background, white icons and &quot;page title&quot;."/>
+            </p>
+            <p>In the layout:</p>
+            <pre><code class="language-xml">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout
+    ...
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"&gt;
+
+    &lt;com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"&gt;
+
+        &lt;com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/page_title"
+            app:menu="@menu/top_app_bar"
+            app:navigationIcon="@drawable/ic_menu_24dp"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            /&gt;
+
+    &lt;/com.google.android.material.appbar.AppBarLayout&gt;
+
+    &lt;!-- Note: A RecyclerView can also be used --&gt;
+    &lt;androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"&gt;
+
+        &lt;!-- Scrollable content --&gt;
+
+    &lt;/androidx.core.widget.NestedScrollView&gt;
+
+&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;
+</code></pre>
+            <p>In <code>@menu/top_app_bar.xml</code>:</p>
+            <pre><code class="language-xml">&lt;menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"&gt;
+
+    &lt;item
+        android:id="@+id/favorite"
+        android:icon="@drawable/ic_favorite_24dp"
+        android:title="@string/favorite"
+        android:contentDescription="@string/content_description_favorite"
+        app:showAsAction="ifRoom" /&gt;
+
+    &lt;item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search_24dp"
+        android:title="@string/search"
+        android:contentDescription="@string/content_description_search"
+        app:showAsAction="ifRoom" /&gt;
+
+    &lt;item
+        android:id="@+id/more"
+        android:title="@string/more"
+        android:contentDescription="@string/content_description_more"
+        app:showAsAction="never" /&gt;
+
+&lt;/menu&gt;
+</code></pre>
+            <p>In menu/navigation icons:</p>
+            <pre><code class="language-xml">&lt;vector
+    ...
+    android:tint="?attr/colorControlNormal"&gt;
+    ...
+&lt;/vector&gt;
+</code></pre>
+            <p>In code:</p>
+            <pre><code class="language-kt">topAppBar.setNavigationOnClickListener {
+    // Handle navigation icon press
+}
+
+topAppBar.setOnMenuItemClickListener { menuItem -&gt;
+    when (menuItem.itemId) {
+        R.id.favorite -&gt; {
+            // Handle favorite icon press
+            true
+        }
+        R.id.search -&gt; {
+            // Handle search icon press
+            true
+        }
+        R.id.more -&gt; {
+            // Handle more item (inside overflow menu) press
+            true
+        }
+        else -&gt; false
+    }
+}
+</code></pre>
+            <p><em><strong>Note:</strong> The above example is the recommended approach and, in
+                order for it to
+                work, you need to be using a <code>Theme.MaterialComponents.*</code> theme
+                containing the
+                <code>NoActionBar</code> segment (eg. <code>Theme.MaterialComponents.Light.NoActionBar</code>).
+                If
+                not, an action bar will be added to the current <code>Activity</code> window. The
+                <code>MaterialToolbar</code> can be set as the support action bar and thus receive
+                various
+                <code>Activity</code> callbacks, as shown in this
+                <a href="https://developer.android.com/training/appbar">guide</a>.</em></p>
+            <h4 id="applying-scrolling-behavior-to-the-top-app-bar">Applying scrolling behavior to
+                the top app bar</h4>
+            <p>The following example shows the top app bar positioned at the same elevation as
+                content. Upon scroll, it increases elevation and lets content scroll behind it.</p>
+            <p>In the layout:</p>
+            <pre><code class="language-xml">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout
+    ...&gt;
+
+    &lt;com.google.android.material.appbar.AppBarLayout
+        ...
+        app:liftOnScroll="true"&gt;
+
+        &lt;com.google.android.material.appbar.MaterialToolbar
+            ...
+            /&gt;
+
+    &lt;/com.google.android.material.appbar.AppBarLayout&gt;
+
+    ...
+
+&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;
+</code></pre>
+            <p>The following example shows the top app bar disappearring upon scrolling up, and
+                appearring upon scrolling down.</p>
+            <p>In the layout:</p>
+            <pre><code class="language-xml">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout
+    ...&gt;
+
+    &lt;com.google.android.material.appbar.AppBarLayout
+        ...&gt;
+
+        &lt;com.google.android.material.appbar.MaterialToolbar
+            ...
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            /&gt;
+
+    &lt;/com.google.android.material.appbar.AppBarLayout&gt;
+
+    ...
+
+&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;
+</code></pre>
+            <h4 id="converting-to-a-prominent-top-app-bar">Converting to a prominent top app
+                bar</h4>
+            <p>The following example shows a prominent top app bar with a page title, a
+                navigation icon, two action icons, and an overflow menu.</p>
+            <p><img src="/components/images/content/8b5e1dfd82267da292c7958dd09b2610.png"
+                    alt="Prominent app bar example with purple background, white icons and &quot;page
+title&quot;."/></p>
+            <p>In the layout:</p>
+            <pre><code class="language-xml">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout
+    ...&gt;
+
+    &lt;com.google.android.material.appbar.AppBarLayout
+        ...
+        android:layout_height="128dp"&gt;
+
+        &lt;com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleMarginStart="72dp"
+            app:expandedTitleMarginBottom="28dp"
+            app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Collapsed"&gt;
+
+            &lt;com.google.android.material.appbar.MaterialToolbar
+                ...
+                android:elevation="0dp"
+                /&gt;
+
+        &lt;/com.google.android.material.appbar.CollapsingToolbarLayout&gt;
+
+    &lt;/com.google.android.material.appbar.AppBarLayout&gt;
+
+    ...
+
+&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;
+</code></pre>
+            <p>In <code>res/values/type.xml</code>:</p>
+            <pre><code class="language-xml">&lt;style name="TextAppearance.App.CollapsingToolbar.Expanded" parent="TextAppearance.MaterialComponents.Headline5"&gt;
+    &lt;item name="android:textColor"&gt;?attr/colorOnPrimary&lt;/item&gt;
+&lt;/style&gt;
+
+&lt;style name="TextAppearance.App.CollapsingToolbar.Collapsed" parent="TextAppearance.MaterialComponents.Headline6"&gt;
+    &lt;item name="android:textColor"&gt;?attr/colorOnPrimary&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+            <h4 id="adding-an-image-to-the-prominent-top-app-bar">Adding an image to the prominent
+                top app bar</h4>
+            <p>The following example shows a prominent top app bar with an image background, a
+                page title, a navigation icon, two action icons, and an overflow menu.</p>
+            <p><img src="/components/images/content/0e78ab80ae291f40d6abacb520c48281.png"
+                    alt="Prominent app bar example with red image background, white icons and &quot;page
+title&quot;."/></p>
+            <p>In the layout:</p>
+            <pre><code class="language-xml">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout
+    ...
+    android:fitsSystemWindows="true"&gt;
+
+    &lt;com.google.android.material.appbar.AppBarLayout
+        ...
+        android:layout_height="152dp"
+        android:fitsSystemWindows="true"&gt;
+
+        &lt;com.google.android.material.appbar.CollapsingToolbarLayout
+            ...
+            android:fitsSystemWindows="true"&gt;
+
+            &lt;ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/media"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                android:contentDescription="@string/content_description_media"
+                /&gt;
+
+            &lt;com.google.android.material.appbar.MaterialToolbar
+                ...
+                android:background="@android:color/transparent"
+                /&gt;
+
+        &lt;/com.google.android.material.appbar.CollapsingToolbarLayout&gt;
+
+    &lt;/com.google.android.material.appbar.AppBarLayout&gt;
+
+    ...
+
+&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;
+</code></pre>
+            <p>In <code>res/values/themes.xml</code>:</p>
+            <pre><code class="language-xml">&lt;style name="Theme.App" parent="Theme.MaterialComponents.*.NoActionBar"&gt;
+    &lt;item name="android:windowTranslucentStatus"&gt;true&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+            <h4 id="applying-scrolling-behavior-to-the-prominent-top-app-bar">Applying scrolling
+                behavior to the prominent top app bar</h4>
+            <p>The following example shows, when scrolling up, the prominent top app bar
+                transforming into a normal top app bar.</p>
+            <p>In the layout:</p>
+            <pre><code class="language-xml">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout
+    ...&gt;
+
+    &lt;com.google.android.material.appbar.AppBarLayout
+        ...&gt;
+
+        &lt;com.google.android.material.appbar.CollapsingToolbarLayout
+            ...
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:contentScrim="?attr/colorPrimary"
+            app:statusBarScrim="?attr/colorPrimaryVariant"&gt;
+
+            ...
+
+            &lt;com.google.android.material.appbar.MaterialToolbar
+                ...
+                app:layout_collapseMode="pin"
+                /&gt;
+
+        &lt;/com.google.android.material.appbar.CollapsingToolbarLayout&gt;
+
+    &lt;/com.google.android.material.appbar.AppBarLayout&gt;
+
+    ...
+
+&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;
+</code></pre>
+            <h3 id="anatomy-and-key-properties">Anatomy and Key properties</h3>
+            <p><img src="/components/images/content/b89a66ca7a6e7c50f1bdbdfac404587d.png"
+                    alt="Regular app bar anatomy diagram"/></p>
+            <ol>
+                <li>Container</li>
+                <li>Navigation icon (optional)</li>
+                <li>Title (optional)</li>
+                <li>Action items (optional)</li>
+                <li>Overflow menu (optional)</li>
+            </ol>
+            <h4 id="container-attributes">Container attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Color</strong></td>
+                    <td><code>android:background</code></td>
+                    <td><code>setBackground</code><br/>
+                        <code>getBackground</code></td>
+                    <td><code>?attr/colorPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> Elevation</strong></td>
+                    <td><code>android:elevation</code></td>
+                    <td><code>setElevation</code><br/>
+                        <code>getElevation</code></td>
+                    <td><code>4dp</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>AppBarLayout</code> elevation</strong></td>
+                    <td><code>android:stateListAnimator</code></td>
+                    <td><code>setStateListAnimator</code><br/>
+                        <code>getStateListAnimator</code></td>
+                    <td><code>0dp</code> to <code>4dp</code> (see all <a
+                            href="https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/appbar/res/animator-v21/design_appbar_state_list_animator.xml">states</a>)
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="navigation-icon-attributes">Navigation icon attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> icon</strong></td>
+                    <td><code>app:navigationIcon</code></td>
+                    <td><code>setNavigationIcon</code><br/>
+                        <code>getNavigationIcon</code></td>
+                    <td><code>null</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> icon color</strong></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><code>?attr/colorControlNormal</code> (as <code>Drawable</code> tint)</td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="title-attributes">Title attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> title text</strong></td>
+                    <td><code>app:title</code></td>
+                    <td><code>setTitle</code><br/>
+                        <code>getTitle</code></td>
+                    <td><code>null</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> subtitle text</strong></td>
+                    <td><code>app:subtitle</code></td>
+                    <td><code>setSubtitle</code><br/>
+                        <code>getSubtitle</code></td>
+                    <td><code>null</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> title color</strong></td>
+                    <td><code>app:titleTextColor</code></td>
+                    <td><code>setTitleTextColor</code></td>
+                    <td><code>?android:attr/textColorPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> subtitle color</strong></td>
+                    <td><code>app:subtitleTextColor</code></td>
+                    <td><code>setSubtitleTextColor</code></td>
+                    <td><code>?android:attr/textColorSecondary</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> title typography</strong></td>
+                    <td><code>app:titleTextAppearance</code></td>
+                    <td><code>setTitleTextAppearance</code></td>
+                    <td><code>?attr/textAppearanceHeadline6</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> subtitle typography</strong></td>
+                    <td><code>app:subtitleTextAppearance</code></td>
+                    <td><code>setSubtitleTextAppearance</code></td>
+                    <td><code>?attr/textAppearanceSubtitle1</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>CollapsingToolbarLayout</code> collapsed title
+                        typography</strong></td>
+                    <td><code>app:collapsedTitleTextAppearance</code></td>
+                    <td><code>setCollapsedTitleTextAppearance</code></td>
+                    <td><code>@style/TextAppearance.AppCompat.Widget.ActionBar.Title</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>CollapsingToolbarLayout</code> expanded title
+                        typography</strong></td>
+                    <td><code>app:expandedTitleTextAppearance</code></td>
+                    <td><code>setExpandedTitleTextAppearance</code></td>
+                    <td><code>@style/TextAppearance.Design.CollapsingToolbar.Expanded</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>CollapsingToolbarLayout</code> collapsed title color</strong>
+                    </td>
+                    <td><code>android:textColor</code> (in
+                        <code>app:collapsedTitleTextAppearance</code>)
+                    </td>
+                    <td><code>setCollapsedTitleTextColor</code></td>
+                    <td><code>?android:attr/textColorPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>CollapsingToolbarLayout</code> expanded title color</strong>
+                    </td>
+                    <td><code>android:textColor</code> (in
+                        <code>app:expandedTitleTextAppearance</code>)
+                    </td>
+                    <td><code>setExpandedTitleTextColor</code></td>
+                    <td><code>?android:attr/textColorPrimary</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>CollapsingToolbarLayout</code> expanded title margins</strong>
+                    </td>
+                    <td><code>app:expandedTitleMargin*</code></td>
+                    <td><code>setExpandedTitleMargin*</code></td>
+                    <td><code>32dp</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>CollapsingToolbarLayout</code> title max lines</strong></td>
+                    <td><code>app:maxLines</code></td>
+                    <td><code>setMaxLines</code><br/>
+                        <code>getMaxLines</code></td>
+                    <td><code>1</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="action-items-attributes">Action items attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> menu</strong></td>
+                    <td><code>app:menu</code></td>
+                    <td><code>inflateMenu</code><br/>
+                        <code>getMenu</code></td>
+                    <td><code>null</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> icon color</strong></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><code>?attr/colorControlNormal</code> (as <code>Drawable</code> tint)</td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="overflow-menu-attributes">Overflow menu attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> icon</strong></td>
+                    <td><code>android:src</code> and <code>app:srcCompat</code> in <code>actionOverflowButtonStyle</code>
+                        (in app theme)
+                    </td>
+                    <td><code>setOverflowIcon</code><br/>
+                        <code>getOverflowIcon</code></td>
+                    <td><code>@drawable/abc_ic_menu_overflow_material</code> (before API 23) or
+                        <code>@drawable/ic_menu_moreoverflow_material</code> (after API 23)
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> overflow theme</strong></td>
+                    <td><code>app:popupTheme</code></td>
+                    <td><code>setPopupTheme</code><br/>
+                        <code>getPopupTheme</code></td>
+                    <td><code>@style/ThemeOverlay.MaterialComponents.*</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> overflow item typography</strong></td>
+                    <td><code>textAppearanceSmallPopupMenu</code> and <code>textAppearanceLargePopupMenu</code>
+                        in <code>app:popupTheme</code> or app theme
+                    </td>
+                    <td>N/A</td>
+                    <td><code>?attr/textAppearanceSubtitle1</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="scrolling-behavior-attributes">Scrolling behavior attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> or <code>CollapsingToolbarLayout</code>
+                        scroll flags</strong></td>
+                    <td><code>app:layout_scrollFlags</code></td>
+                    <td><code>setScrollFlags</code><br/>
+                        <code>getScrollFlags</code><br/>
+                        (on <code>AppBarLayout.LayoutParams</code>)
+                    </td>
+                    <td><code>noScroll</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>MaterialToolbar</code> collapse mode</strong></td>
+                    <td><code>app:collapseMode</code></td>
+                    <td><code>setCollapseMode</code><br/>
+                        <code>getCollapseMode</code><br/>
+                        (on <code>CollapsingToolbar</code>)
+                    </td>
+                    <td><code>none</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>CollapsingToolbarLayout</code> content scrim color</strong>
+                    </td>
+                    <td><code>app:contentScrim</code></td>
+                    <td><code>setContentScrim</code><br/>
+                        <code>setContentScrimColor</code><br/>
+                        <code>setContentScrimResource</code><br/>
+                        <code>getContentScrim</code></td>
+                    <td><code>null</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>CollapsingToolbarLayout</code> status bar scrim color</strong>
+                    </td>
+                    <td><code>app:statusBarScrim</code></td>
+                    <td><code>setStatusBarScrim</code><br/>
+                        <code>setStatusBarScrimColor</code><br/>
+                        <code>setStatusBarScrimResource</code><br/>
+                        <code>getStatusBarScrim</code></td>
+                    <td><code>?attr/colorPrimaryDark</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>CollapsingToolbarLayout</code> scrim animation
+                        duration</strong></td>
+                    <td><code>app:scrimAnimationDuration</code></td>
+                    <td><code>setScrimAnimationDuration</code><br/>
+                        <code>getScrimAnimationDuration</code></td>
+                    <td><code>600</code></td>
+                </tr>
+                <tr>
+                    <td><strong><code>AppBarLayout</code> lift on scroll</strong></td>
+                    <td><code>app:liftOnScroll</code></td>
+                    <td><code>setLiftOnScroll</code><br/>
+                        <code>isLiftOnScroll</code></td>
+                    <td><code>false</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="appbarlayout-styles"><code>AppBarLayout</code> styles</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Style</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Primary background color style</strong></td>
+                    <td><code>Widget.MaterialComponents.AppBarLayout.Primary</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Surface background color style</strong></td>
+                    <td><code>Widget.MaterialComponents.AppBarLayout.Surface</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Primary (light theme) or surface (dark theme) background color
+                        style</strong></td>
+                    <td><code>Widget.MaterialComponents.AppBarLayout.PrimarySurface</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Default style theme attribute: <code>?attr/appBarLayoutStyle</code></p>
+            <h4 id="materialtoolbar-styles"><code>MaterialToolbar</code> styles</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Style</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Default style</strong></td>
+                    <td><code>Widget.MaterialComponents.Toolbar</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Primary background color style</strong></td>
+                    <td><code>Widget.MaterialComponents.Toolbar.Primary</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Surface background color style</strong></td>
+                    <td><code>Widget.MaterialComponents.Toolbar.Surface</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Primary (light theme) or surface (dark theme) background color
+                        style</strong></td>
+                    <td><code>Widget.MaterialComponents.Toolbar.PrimarySurface</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Default style theme attribute: <code>?attr/toolbarStyle</code></p>
+            <h4 id="collapsingtoolbarlayout-styles"><code>CollapsingToolbarLayout</code> styles</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Style</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Default style</strong></td>
+                    <td><code>Widget.Design.CollapsingToolbar</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Default style theme attribute: N/A</p>
+            <p>See the full list of
+                <a href="https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/appbar/res/values/styles.xml">styles</a>
+                and
+                <a href="https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/appbar/res/values/attrs.xml">attrs</a>.
+            </p>
+            <h2 id="contextual-action-bar">Contextual action bar</h2>
+            <p>Contextual action bars provide actions for selected items. A top app bar can
+                transform into a contextual action bar, remaining active until an action is
+                taken or it is dismissed.</p>
+            <h3 id="contextual-action-bar-example">Contextual action bar example</h3>
+            <p>API and source code:</p>
+            <ul>
+                <li><code>ActionMode</code>
+                    <ul>
+                        <li>
+                            <a href="https://developer.android.com/reference/androidx/appcompat/view/ActionMode">Class
+                                definition</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>The following example shows a contextual action bar with a contextual title, a
+                close icon, two contextual action icons, and an overflow menu:</p>
+            <p><img src="/components/images/content/0eba55d7311202ac678783e7dc96bae6.png"
+                    alt="Contextual action bar example with dark grey background, white icons and &quot;1
+selected&quot;."/></p>
+            <p>In <code>res/values/themes.xml</code>:</p>
+            <pre><code class="language-xml">&lt;style name="Theme.App" parent="Theme.MaterialComponents.*.NoActionBar"&gt;
+    ...
+    &lt;item name="windowActionModeOverlay"&gt;true&lt;/item&gt;
+    &lt;item name="actionModeStyle"&gt;@style/Widget.App.ActionMode&lt;/item&gt;
+    &lt;item name="actionModeCloseDrawable"&gt;@drawable/ic_close_24dp&lt;/item&gt;
+    &lt;item name="actionBarTheme"&gt;@style/ThemeOverlay.MaterialComponents.Dark.ActionBar&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+            <p>In <code>res/values/styles.xml</code>:</p>
+            <pre><code class="language-xml">&lt;style name="Widget.App.ActionMode" parent="Widget.AppCompat.ActionMode"&gt;
+    &lt;item name="titleTextStyle"&gt;?attr/textAppearanceHeadline6&lt;/item&gt;
+    &lt;item name="subtitleTextStyle"&gt;?attr/textAppearanceSubtitle1&lt;/item&gt;
+    &lt;item name="background"&gt;@color/material_grey_900&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+            <p>In code:</p>
+            <pre><code class="language-kt">val callback = object : ActionMode.Callback {
+
+    override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.contextual_action_bar, menu)
+        return true
+    }
+
+    override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+        return false
+    }
+
+    override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+        return when (item?.itemId) {
+            R.id.share -&gt; {
+                // Handle share icon press
+                true
+            }
+            R.id.delete -&gt; {
+                // Handle delete icon press
+                true
+            }
+            R.id.more -&gt; {
+                // Handle more item (inside overflow menu) press
+                true
+            }
+            else -&gt; false
+        }
+    }
+
+    override fun onDestroyActionMode(mode: ActionMode?) {
+    }
+}
+
+val actionMode = startSupportActionMode(callback)
+actionMode?.title = "1 selected"
+</code></pre>
+            <p>In <code>@menu/contextual_action_bar.xml</code>:</p>
+            <pre><code class="language-xml">&lt;menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"&gt;
+
+    &lt;item
+        android:id="@+id/share"
+        android:icon="@drawable/ic_share_24dp"
+        android:title="@string/share"
+        android:contentDescription="@string/content_description_share"
+        app:showAsAction="ifRoom" /&gt;
+
+    &lt;item
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_delete_24dp"
+        android:title="@string/delete"
+        android:contentDescription="@string/content_description_delete"
+        app:showAsAction="ifRoom" /&gt;
+
+    &lt;item
+        android:id="@+id/more"
+        android:title="@string/more"
+        android:contentDescription="@string/content_description_more"
+        app:showAsAction="never" /&gt;
+
+&lt;/menu&gt;
+</code></pre>
+            <p>In menu/navigation icons:</p>
+            <pre><code class="language-xml">&lt;vector
+    ...
+    android:tint="?attr/colorControlNormal"&gt;
+    ...
+&lt;/vector&gt;
+</code></pre>
+            <h3 id="anatomy-and-key-properties-1">Anatomy and Key properties</h3>
+            <p><img src="/components/images/content/cad7c844d7b9f5b6f5e5523ffc8081a1.png"
+                    alt="Contextual action bar anatomy diagram"/></p>
+            <ol>
+                <li>Close button (instead of a navigation icon)</li>
+                <li>Contextual title</li>
+                <li>Contextual actions</li>
+                <li>Overflow menu (optional)</li>
+                <li>Container (not shown)</li>
+            </ol>
+            <h4 id="close-button-attributes">Close button attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Icon</strong></td>
+                    <td><code>app:actionModeCloseDrawable</code> (in app theme)</td>
+                    <td>N/A</td>
+                    <td><code>@drawable/abc_ic_ab_back_material</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Color</strong></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><code>?attr/colorControlNormal</code> (as <code>Drawable</code> tint)</td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="contextual-title-attributes">Contextual title attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Title text</strong></td>
+                    <td>N/A</td>
+                    <td><code>setTitle</code><br/>
+                        <code>getTitle</code></td>
+                    <td><code>null</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Subtitle text</strong></td>
+                    <td>N/A</td>
+                    <td><code>setSubtitle</code><br/>
+                        <code>getSubtitle</code></td>
+                    <td><code>null</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Title typography</strong></td>
+                    <td><code>app:titleTextStyle</code></td>
+                    <td>N/A</td>
+                    <td><code>@style/TextAppearance.AppCompat.Widget.ActionMode.Title</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Subtitle typography</strong></td>
+                    <td><code>app:subtitleTextStyle</code></td>
+                    <td>N/A</td>
+                    <td><code>@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="contextual-actions-attributes">Contextual actions attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Menu</strong></td>
+                    <td>N/A</td>
+                    <td><code>menuInflater.inflate</code> in <code>ActionMode.Callback</code></td>
+                    <td><code>null</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Icon color</strong></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><code>?attr/colorControlNormal</code> (as <code>Drawable</code> tint)</td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="overflow-menu-attributes-1">Overflow menu attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Icon</strong></td>
+                    <td><code>android:src</code> and <code>app:srcCompat</code> in <code>actionOverflowButtonStyle</code>
+                        (in app theme)
+                    </td>
+                    <td><code>setOverflowIcon</code><br/>
+                        <code>getOverflowIcon</code></td>
+                    <td><code>@drawable/abc_ic_menu_overflow_material</code> (before API 23) or
+                        <code>@drawable/ic_menu_moreoverflow_material</code> (after API 23)
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Overflow item typography</strong></td>
+                    <td><code>textAppearanceSmallPopupMenu</code> and <code>textAppearanceLargePopupMenu</code>
+                        in app theme
+                    </td>
+                    <td>N/A</td>
+                    <td><code>?attr/textAppearanceSubtitle1</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="container-attributes-1">Container attributes</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Related method(s)</th>
+                    <th>Default value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Color</strong></td>
+                    <td><code>app:background</code></td>
+                    <td>N/A</td>
+                    <td><code>?attr/actionModeBackground</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Height</strong></td>
+                    <td><code>app:height</code></td>
+                    <td>N/A</td>
+                    <td><code>?attr/actionBarSize</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Overlay window</strong></td>
+                    <td><code>app:windowActionModeOverlay</code> (in app theme)</td>
+                    <td>N/A</td>
+                    <td><code>false</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="styles">Styles</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Style</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><strong>Default style</strong></td>
+                    <td><code>Widget.AppCompat.ActionMode</code></td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Default style theme attribute: <code>actionModeStyle</code></p>
+            <h2 id="theming-the-top-app-bar">Theming the top app bar</h2>
+            <p>The top app bar supports
+                <a href="https://material.io/components/app-bars-top/#theming">Material Theming</a>
+                and can
+                be customized in terms of color, typography and shape.</p>
+            <h3 id="top-app-bar-theming-example">Top app bar theming example</h3>
+            <p>API and source code:</p>
+            <ul>
+                <li><code>AppBarLayout</code>
+                    <ul>
+                        <li>
+                            <a href="https://developer.android.com/reference/com/google/android/material/appbar/AppBarLayout">Class
+                                definition</a></li>
+                        <li>
+                            <a href="https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/appbar/AppBarLayout.java">Class
+                                source</a></li>
+                    </ul>
+                </li>
+                <li><code>MaterialToolbar</code>
+                    <ul>
+                        <li>
+                            <a href="https://developer.android.com/reference/com/google/android/material/appbar/MaterialToolbar">Class
+                                definition</a></li>
+                        <li>
+                            <a href="https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/appbar/MaterialToolbar.java">Class
+                                source</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>The following example shows a regular top app bar with Material Theming.</p>
+            <p><img src="/components/images/content/c436fb93619154ec68a66499ded065ae.png"
+                    alt="&quot;Top app bar theming with pink and brown colors&quot;"/></p>
+            <h4 id="implementing-top-app-bar-theming">Implementing top app bar theming</h4>
+            <p>Using theme attributes in <code>res/values/styles.xml</code> (themes all top app bars
+                and
+                affects other components):</p>
+            <pre><code class="language-xml">&lt;style name="Theme.App" parent="Theme.MaterialComponents.*.NoActionBar"&gt;
+    ...
+    &lt;item name="colorPrimary"&gt;@color/shrine_pink_100&lt;/item&gt;
+    &lt;item name="colorPrimaryVariant"&gt;@color/shrine_pink_300&lt;/item&gt;
+    &lt;item name="colorOnPrimary"&gt;@color/shrine_pink_900&lt;/item&gt;
+    &lt;item name="android:statusBarColor"&gt;?attr/colorPrimaryVariant&lt;/item&gt;
+    &lt;item name="android:windowLightStatusBar" tools:targetApi="m"&gt;true&lt;/item&gt;
+    &lt;item name="textAppearanceHeadline6"&gt;@style/TextAppearance.App.Headline6&lt;/item&gt;
+    &lt;item name="textAppearanceSubtitle1"&gt;@style/TextAppearance.App.Subtitle1&lt;/item&gt;
+&lt;/style&gt;
+
+&lt;style name="TextAppearance.Shrine.Headline6" parent="TextAppearance.MaterialComponents.Headline6"&gt;
+    &lt;item name="fontFamily"&gt;@font/rubik&lt;/item&gt;
+    &lt;item name="android:fontFamily"&gt;@font/rubik&lt;/item&gt;
+&lt;/style&gt;
+
+&lt;style name="TextAppearance.App.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1"&gt;
+    &lt;item name="fontFamily"&gt;@font/rubik&lt;/item&gt;
+    &lt;item name="android:fontFamily"&gt;@font/rubik&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+            <p>or using default style theme attributes, styles and theme overlays (themes all
+                top app bars but does not affect other components):</p>
+            <pre><code class="language-xml">&lt;style name="Theme.App" parent="Theme.MaterialComponents.*.NoActionBar"&gt;
+    ...
+    &lt;item name="toolbarStyle"&gt;@style/Widget.App.Toolbar&lt;/item&gt;
+&lt;/style&gt;
+
+&lt;style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary"&gt;
+    &lt;item name="materialThemeOverlay"&gt;@style/ThemeOverlay.App.Toolbar&lt;/item&gt;
+    &lt;item name="titleTextAppearance"&gt;@style/TextAppearance.App.Headline6&lt;/item&gt;
+    &lt;item name="subtitleTextAppearance"&gt;@style/TextAppearance.App.Subtitle1&lt;/item&gt;
+&lt;/style&gt;
+
+&lt;style name="ThemeOverlay.App.Toolbar" parent=""&gt;
+    &lt;item name="colorPrimary"&gt;@color/shrine_pink_100&lt;/item&gt;
+    &lt;item name="colorPrimaryVariant"&gt;@color/shrine_pink_300&lt;/item&gt;
+    &lt;item name="colorOnPrimary"&gt;@color/shrine_pink_900&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+            <p>or using one the style in the layout (affects only this top app bar):</p>
+            <pre><code class="language-xml">&lt;com.google.android.material.appbar.MaterialToolbar
+    ...
+    app:title="@string/flow_shirt_blouse"
+    app:menu="@menu/top_app_bar_shrine"
+    app:navigationIcon="@drawable/ic_close_24dp"
+    style="@style/Widget.App.Toolbar"
+    /&gt;
+</code></pre>
+        </article>
+        <footer class="footer">
+            <section class="footer__content">
+                <div class="footer__row">
+                    <a class="footer__logo-link" href="/">
+                        <div class="footer__logo"></div>
+                    </a>
+                    <div class="footer__copy">
+                        <p class="footer__description">Material design is an adaptable system—backed
+                            by open-source code—guiding you in the principles and best practices of
+                            contemporary UI. Material helps teams streamline the designer-developer
+                            collaboration, reduce complexity, and enable fidelity through reusable
+                            components, patterns, and code libraries. All while adapting easily to
+                            your brand, platform, and users’ needs.</p>
+                        <nav class="footer__navigation">
+                            <ul class="footer__navigation-list">
+                                <li class="footer__navigation-list-item">
+                                    <a href="https://www.github.com/material-components"
+                                       target="_blank"
+                                       class="footer-block__social-nav-link">
+                                        Github
+                                    </a>
+                                </li>
+                                <li class="footer__navigation-list-item">
+                                    <a href="https://www.twitter.com/materialdesign"
+                                       target="_blank"
+                                       class="footer-block__social-nav-link">
+                                        Twitter
+                                    </a>
+                                </li>
+                                <li class="footer__navigation-list-item">
+                                    <a href="https://www.youtube.com/googledesign"
+                                       target="_blank"
+                                       class="footer-block__social-nav-link">
+                                        YouTube
+                                    </a>
+                                </li>
+                                <li class="footer__navigation-list-item">
+                                    <a href="https://services.google.com/fb/forms/materialdesignnewsletter/"
+                                       target="_blank"
+                                       class="footer-block__social-nav-link"
+                                       aria-label="Sign up for our newsletter">
+                                        Subscribe for updates
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer__row footer-legal">
+                    <a class="footer-legal__logo-container" href="https://google.com">
+                        <img src="/develop/images/google-logo-gray.svg" alt="Google"/>
+                    </a>
+                    <ul class="footer-legal__nav-list">
+                        <li class="footer-legal__nav-list-item">
+                            <a href="https://policies.google.com/privacy"
+                               target="_blank"
+                               class="footer-legal__nav-list-link">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="footer-legal__nav-list-item">
+                            <a href="https://policies.google.com/terms"
+                               target="_blank"
+                               class="footer-legal__nav-list-link">
+                                Terms and Conditions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </footer>
+    </section>
+</div>
+<template id="language-radio-template">
+    <div class="mdc-form-field">
+        <div class="mdc-radio">
+            <input class="mdc-radio__native-control"
+                   type="radio"
+                   id="" name="" value="">
+            <div class="mdc-radio__background">
+                <div class="mdc-radio__outer-circle"></div>
+                <div class="mdc-radio__inner-circle"></div>
+            </div>
+        </div>
+        <label class="language-name" for=""></label>
+    </div>
+</template>
+<button
+        class="feedback-button"
+        aria-label="Send Feedback"
+        tabindex="0">
+</button>
+<script src="/develop/js/index.js" async></script>
+<script src="https://www.gstatic.com/feedback/api.js" async></script>
+</body>
+</html>

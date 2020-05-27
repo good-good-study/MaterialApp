@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navi_archive"
+        android:icon="@drawable/ic_navi_archive_white"
+        android:title="archive"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/navi_email"
+        android:icon="@drawable/ic_navi_email_white"
+        android:title="email"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/navi_label"
+        android:icon="@drawable/ic_navi_label_white"
+        android:title="label"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/navi_delete"
+        android:icon="@drawable/ic_navi_delete_white"
+        android:title="delete"
+        app:showAsAction="ifRoom" />
+</menu>

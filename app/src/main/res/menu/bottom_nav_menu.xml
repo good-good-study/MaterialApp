@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/tab_gallery_selector"
+        android:title="@string/bottom_nav_gallery" />
+    <item
+        android:icon="@drawable/tab_find_selector"
+        android:title="@string/bottom_nav_find" />
+    <item
+        android:icon="@drawable/tab_search_selector"
+        android:title="@string/bottom_nav_search" />
+    <item
+        android:icon="@drawable/tab_mine_selector"
+        android:title="@string/bottom_nav_mine" />
+</menu>
