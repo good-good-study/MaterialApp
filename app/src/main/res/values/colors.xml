@@ -13,6 +13,7 @@
     <color name="text_color_1">#333333</color>
     <color name="text_color_2">#666666</color>
     <color name="text_color_3">#999999</color>
+    <color name="card_stroke">#D9D9D9</color>
 
     <color name="shadow">#33000000</color>
 

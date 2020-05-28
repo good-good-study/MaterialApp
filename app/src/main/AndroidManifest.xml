@@ -21,25 +21,16 @@
 
         <activity
             android:name=".ui.MainActivity"
-            android:screenOrientation="fullSensor">
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.material.tablayout.TabLayoutActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="fullSensor" />
-        <activity
-            android:name=".ui.material.chips.ChipsActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="fullSensor" />
-        <activity
-            android:name=".ui.material.tablayout.CollapsingTabActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="fullSensor" />
+        <activity android:name=".ui.material.tablayout.TabLayoutActivity" />
+        <activity android:name=".ui.material.chips.ChipsActivity" />
+        <activity android:name=".ui.material.tablayout.CollapsingTabActivity" />
         <activity android:name=".ui.material.collapsing.CollapsingActivity" />
         <activity android:name=".ui.material.toolbar.ToolbarActivity" />
         <activity android:name=".ui.material.collapsing.CollapsingToolbarActivity" />
@@ -56,6 +47,7 @@
         <activity android:name=".ui.material.bottomNavogation.BottomNavigationAnimatedActivity" />
         <activity android:name=".ui.material.cards.CardViewListDragActivity" />
         <activity android:name=".ui.material.bottomSheet.BottomSheetActivity" />
+        <activity android:name=".ui.material.cards.CardViewCollectionsActivity" />
         <!--高德地图-->
         <service android:name="com.amap.api.location.APSService" />
         <meta-data

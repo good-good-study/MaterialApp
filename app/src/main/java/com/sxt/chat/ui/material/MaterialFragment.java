@@ -21,6 +21,7 @@ import com.sxt.chat.ui.material.bottomNavogation.BottomNavigationBadgeActivity;
 import com.sxt.chat.ui.material.bottomNavogation.BottomNavigationTransitionsActivity;
 import com.sxt.chat.ui.material.bottomSheet.BottomSheetActivity;
 import com.sxt.chat.ui.material.cards.CardViewActivity;
+import com.sxt.chat.ui.material.cards.CardViewCollectionsActivity;
 import com.sxt.chat.ui.material.cards.CardViewDraggableActivity;
 import com.sxt.chat.ui.material.cards.CardViewListDragActivity;
 import com.sxt.chat.ui.material.cards.CardViewSelectableActivity;
@@ -191,7 +192,7 @@ public class MaterialFragment extends BaseFragment<FragmentMaterialBinding, Mate
                 ActivityCollector.startActivity(getContext(), CardViewSwipeActivity.class);
                 break;
             case "Collections":
-                ActivityCollector.startActivity(getContext(), BottomNavigationTransitionsActivity.class);
+                ActivityCollector.startActivity(getContext(), CardViewCollectionsActivity.class);
                 break;
             case "Scrolling":
                 ActivityCollector.startActivity(getContext(), BottomNavigationTransitionsActivity.class);
