@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Cafe Badilico",
+    "image": "https://bmob-cdn-25616.bmobcloud.com/2019/05/11/ee4bbe8d40d0f8328085bc9c00ef5839.webp",
+    "rating": 4.5,
+    "members": "(413)",
+    "comments": [
+      {
+        "alias": "Joe Stockton",
+        "avatar": "https://bmob-cdn-25616.bmobcloud.com/2019/05/11/95d7676e40dc78d880380e64631f1866.webp",
+        "rating": 4.5,
+        "time": "3 days ago",
+        "comment": "Best coffee shop ever. It was really nice and cozy inside with a very low-key atmosphere. It wasn't too busy when I was there but I'm sure it gets packed around the morning rush. Coffee is amazing as well as the speedy service. Last but not lest, the baristas really know what they'er doing."
+      }
+    ]
+  },
+  {
+    "title": "Britta Holt",
+    "image": "https://bmob-cdn-25616.bmobcloud.com/2019/05/11/8462ec8440cf723f80b41609ed301b4c.webp",
+    "rating": 3.5,
+    "members": "(256)",
+    "comments": [
+      {
+        "alias": "Continuity",
+        "avatar": "https://bmob-cdn-25616.bmobcloud.com/2019/05/11/34f4afc440e5829780e9b9ffc1b88f78.webp",
+        "rating": 4.5,
+        "time": "3 days ago",
+        "comment": "Best coffee shop ever. It was really nice and cozy inside with a very low-key atmosphere. It wasn't too busy when I was there but I'm sure it gets packed around the morning rush. Coffee is amazing as well as the speedy service. Last but not lest, the baristas really know what they'er doing."
+      }
+    ]
+  },
+  {
+    "title": "Cafe",
+    "image": "https://bmob-cdn-25616.bmobcloud.com/2019/05/11/e98377e04091e556808e3de40696ced2.webp",
+    "rating": 2.5,
+    "members": "(43)",
+    "comments": [
+      {
+        "alias": "Joe Stockton",
+        "avatar": "https://bmob-cdn-25616.bmobcloud.com/2019/05/11/95d7676e40dc78d880380e64631f1866.webp",
+        "rating": 4.5,
+        "time": "3 days ago",
+        "comment": "Best coffee shop ever. It was really nice and cozy inside with a very low-key atmosphere. It wasn't too busy when I was there but I'm sure it gets packed around the morning rush. Coffee is amazing as well as the speedy service. Last but not lest, the baristas really know what they'er doing."
+      }
+    ]
+  },
+  {
+    "title": "Elizabeth",
+    "image": "https://bmob-cdn-25616.bmobcloud.com/2019/05/11/742bdc6b40138d8180e68b5be53a5e99.webp",
+    "rating": 4.5,
+    "members": "(26)",
+    "comments": [
+      {
+        "alias": "Continuity",
+        "avatar": "https://bmob-cdn-25616.bmobcloud.com/2019/05/11/34f4afc440e5829780e9b9ffc1b88f78.webp",
+        "rating": 4.5,
+        "time": "3 days ago",
+        "comment": "Best coffee shop ever. It was really nice and cozy inside with a very low-key atmosphere. It wasn't too busy when I was there but I'm sure it gets packed around the morning rush. Coffee is amazing as well as the speedy service. Last but not lest, the baristas really know what they'er doing."
+      }
+    ]
+  }
+]

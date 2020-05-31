@@ -1,11 +1,10 @@
 package com.sxt.chat.ui.material;
 
 import android.app.Application;
-import android.transition.AutoTransition;
-import android.transition.TransitionManager;
-import android.view.animation.LinearInterpolator;
 
-import com.google.android.material.appbar.CollapsingToolbarLayout;
+import androidx.transition.Transition;
+import androidx.transition.TransitionManager;
+
 import com.sxt.chat.R;
 import com.sxt.chat.app.App;
 import com.sxt.chat.app.ViewModelFactory;
@@ -23,6 +22,7 @@ import com.sxt.chat.ui.material.bottomSheet.BottomSheetActivity;
 import com.sxt.chat.ui.material.cards.CardViewActivity;
 import com.sxt.chat.ui.material.cards.CardViewCollectionsActivity;
 import com.sxt.chat.ui.material.cards.CardViewDraggableActivity;
+import com.sxt.chat.ui.material.cards.CardViewExpandActivity;
 import com.sxt.chat.ui.material.cards.CardViewListDragActivity;
 import com.sxt.chat.ui.material.cards.CardViewSelectableActivity;
 import com.sxt.chat.ui.material.cards.CardViewSwipeActivity;
@@ -30,6 +30,8 @@ import com.sxt.chat.ui.material.chips.ChipsActivity;
 import com.sxt.chat.ui.material.tablayout.CollapsingTabActivity;
 import com.sxt.chat.ui.material.tablayout.TabLayoutActivity;
 import com.sxt.chat.utils.SnackBarHelper;
+import com.sxt.chat.view.transition.FadeInTransition;
+import com.sxt.chat.view.transition.FadeOutTransition;
 import com.sxt.mvvm.data.material.Category;
 import com.sxt.mvvm.view.ActivityCollector;
 import com.sxt.mvvm.view.BaseFragment;
@@ -110,18 +112,16 @@ public class MaterialFragment extends BaseFragment<FragmentMaterialBinding, Mate
     }
 
     @NotNull
-    private AutoTransition getExpandTransition() {
-        AutoTransition transition = new AutoTransition();
-        transition.setDuration(200);
-        transition.setInterpolator(new LinearInterpolator());
+    private Transition getExpandTransition() {
+        FadeInTransition transition = new FadeInTransition();
+        transition.setDuration(300);
         return transition;
     }
 
     @NotNull
-    private AutoTransition getCollapseTransition() {
-        AutoTransition transition = new AutoTransition();
-        transition.setDuration(180);
-        transition.setInterpolator(new LinearInterpolator());
+    private Transition getCollapseTransition() {
+        FadeOutTransition transition = new FadeOutTransition();
+        transition.setDuration(300);
         return transition;
     }
 
@@ -194,8 +194,8 @@ public class MaterialFragment extends BaseFragment<FragmentMaterialBinding, Mate
             case "Collections":
                 ActivityCollector.startActivity(getContext(), CardViewCollectionsActivity.class);
                 break;
-            case "Scrolling":
-                ActivityCollector.startActivity(getContext(), BottomNavigationTransitionsActivity.class);
+            case "Expand":
+                ActivityCollector.startActivity(getContext(), CardViewExpandActivity.class);
                 break;
         }
     }

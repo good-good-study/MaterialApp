@@ -39,7 +39,7 @@ public class CardCollectionsAdapter extends BaseRecyclerAdapter<CardMessage> {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         ViewHolder holder = (ViewHolder) viewHolder;
         int marginMax = (int) ViewUtils.dpToPx(context, 16);
-        int marginMin = (int) ViewUtils.dpToPx(context, 4);
+        int marginMin = (int) ViewUtils.dpToPx(context, 2);
         RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) holder.itemView.getLayoutParams();
         params.leftMargin = position == 0 ? marginMax : marginMin;
         params.rightMargin = position == getItemCount() - 1 ? marginMax : marginMin;

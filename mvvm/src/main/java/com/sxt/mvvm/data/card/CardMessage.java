@@ -7,7 +7,12 @@ package com.sxt.mvvm.data.card;
 public class CardMessage {
     private String title;
     private String message;
+    private String avatar;
     private String image;
+
+    public String getAvatar() {
+        return avatar;
+    }
 
     public String getTitle() {
         return title;

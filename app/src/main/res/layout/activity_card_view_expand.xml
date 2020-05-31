@@ -32,24 +32,18 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="2dp"
-                android:paddingTop="4dp"
-                android:paddingRight="2dp"
-                android:paddingBottom="4dp"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="2" />
-
-        </androidx.core.widget.NestedScrollView>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingTop="4dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="4dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:spanCount="2" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
