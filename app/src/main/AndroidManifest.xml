@@ -49,6 +49,7 @@
         <activity android:name=".ui.material.bottomSheet.BottomSheetActivity" />
         <activity android:name=".ui.material.cards.CardViewCollectionsActivity" />
         <activity android:name=".ui.material.cards.CardViewExpandActivity" />
+        <activity android:name=".ui.material.list.ListImageActivity" />
         <!--高德地图-->
         <service android:name="com.amap.api.location.APSService" />
         <meta-data

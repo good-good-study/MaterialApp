@@ -27,7 +27,6 @@ android {
             storePassword "123456"
             keyAlias "wechat"
             keyPassword "123456"
-            v2SigningEnabled false
         }
 
         debug {

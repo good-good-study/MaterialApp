@@ -54,7 +54,7 @@ public class MaterialAdapter extends BaseRecyclerAdapter<Category> {
 
     private void bindAdapter(int position, ViewHolder holder) {
         Category category = getItem(position);
-        holder.binding.setCategory(category.getCategory());
+        holder.binding.setCategory(category);
         holder.binding.content.setNestedScrollingEnabled(false);
         //设置扩展项数据
         DividerItemDecoration decoration = new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);

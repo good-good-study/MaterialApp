@@ -8,7 +8,12 @@ import java.util.List;
  */
 public class Category {
     private String category;
+    private String image;
     private List<String> tag;
+
+    public String getImage() {
+        return image;
+    }
 
     public String getCategory() {
         return category;

@@ -6,7 +6,7 @@
 
         <variable
             name="category"
-            type="String" />
+            type="com.sxt.mvvm.data.material.Category" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -49,7 +49,9 @@
                         android:layout_width="36dp"
                         android:layout_height="36dp"
                         android:layout_marginLeft="8dp"
-                        android:src="@drawable/ic_launcher" />
+                        app:conner="@{4}"
+                        app:placeHolder="@{@drawable/ic_launcher_background}"
+                        app:srcUrl="@{category.image}" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -58,7 +60,7 @@
                         android:layout_marginTop="2dp"
                         android:gravity="center_vertical"
                         android:shadowColor="@color/text_color_1"
-                        android:text="@{category,default=category}"
+                        android:text="@{category.category,default=category}"
                         android:textColor="@color/text_color_1"
                         android:textSize="18dp" />
 

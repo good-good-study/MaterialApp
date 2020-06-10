@@ -27,9 +27,11 @@ import com.sxt.chat.ui.material.cards.CardViewListDragActivity;
 import com.sxt.chat.ui.material.cards.CardViewSelectableActivity;
 import com.sxt.chat.ui.material.cards.CardViewSwipeActivity;
 import com.sxt.chat.ui.material.chips.ChipsActivity;
+import com.sxt.chat.ui.material.list.ListImageActivity;
 import com.sxt.chat.ui.material.tablayout.CollapsingTabActivity;
 import com.sxt.chat.ui.material.tablayout.TabLayoutActivity;
 import com.sxt.chat.utils.SnackBarHelper;
+import com.sxt.chat.utils.categroy.Categories;
 import com.sxt.chat.view.transition.FadeInTransition;
 import com.sxt.chat.view.transition.FadeOutTransition;
 import com.sxt.mvvm.data.material.Category;
@@ -141,11 +143,22 @@ public class MaterialFragment extends BaseFragment<FragmentMaterialBinding, Mate
             case CardView:
                 cardView(position, category);
                 break;
+            case Categories.List:
+                list(position, category);
+                break;
             case Tabs:
                 tabs(position, category);
                 break;
             case Chips:
                 chips(position, category);
+                break;
+        }
+    }
+
+    private void list(int position, Category category) {
+        switch (category.getTag().get(position)) {
+            default:
+                ActivityCollector.startActivity(getContext(), ListImageActivity.class);
                 break;
         }
     }
