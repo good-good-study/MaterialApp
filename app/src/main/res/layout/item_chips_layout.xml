@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="98dp"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipsStyle"
+                android:text="家"
+                app:chipIcon="@drawable/ic_chip_home" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipsStyle"
+                android:text="送餐"
+                app:chipIcon="@drawable/ic_chip_food" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipsStyle"
+                android:text="加油站"
+                app:chipIcon="@drawable/ic_chip_ev_station" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipsStyle"
+                android:text="杂货店"
+                app:chipIcon="@drawable/ic_chip_shopping" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipsStyle"
+                android:text="药店"
+                app:chipIcon="@drawable/ic_chip_hospital" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipsStyle"
+                android:text="咖啡馆"
+                app:chipIcon="@drawable/ic_chip_coffee" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipsStyle"
+                android:text="酒店"
+                app:chipIcon="@drawable/ic_chip_hotel" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/ChipsStyle"
+                android:text="更多"
+                app:chipIcon="@drawable/ic_chip_more" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+</layout>

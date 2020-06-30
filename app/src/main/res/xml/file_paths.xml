@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <root-path
+            name="camera_photos"
+            path="" />
+
+        <root-path
+            name="root"
+            path="" />
+
+        <files-path
+            name="files"
+            path="" />
+
+        <cache-path
+            name="cache"
+            path="" />
+
+        <!--腾讯广告联盟 这个下载路径也不可以修改，必须为GDTDOWNLOAD -->
+        <external-path
+            name="gdt_sdk_download_path"
+            path="GDTDOWNLOAD" />
+
+        <external-files-path
+            name="download"
+            path="chat" />
+
+        <external-cache-path
+            name="external_cache_path"
+            path="" />
+    </paths>
+</resources>
