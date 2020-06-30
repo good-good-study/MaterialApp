@@ -24,6 +24,8 @@ import androidx.core.view.ViewPropertyAnimatorListener;
 
 import com.sxt.chat.R;
 
+import cn.bmob.v3.util.V;
+
 import static android.view.View.GONE;
 
 /**
@@ -52,6 +54,23 @@ public class AnimationUtil {
         boolean onAnimationEnd(View view);
 
         boolean onAnimationCancel(View view);
+    }
+
+    /**
+     * 旋转动画
+     */
+    public static void rotationInput(View target, float startAngle, float endAngle, boolean isHidden) {
+        ObjectAnimator rotation = ObjectAnimator.ofFloat(target, "rotation", startAngle, endAngle);
+        rotation.setDuration(ANIMATION_DURATION_SHORT);
+        if (!isHidden) target.setVisibility(View.VISIBLE);
+        if (isHidden) rotation.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                target.setVisibility(GONE);
+            }
+        });
+        rotation.start();
     }
 
     /**

@@ -5,22 +5,15 @@ import android.graphics.Color;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-
-import com.google.android.material.behavior.HideBottomViewOnScrollBehavior;
-import com.google.android.material.bottomappbar.BottomAppBar;
 import com.sxt.chat.R;
 import com.sxt.chat.app.App;
 import com.sxt.chat.app.ViewModelFactory;
-import com.sxt.chat.databinding.ActivityBottomAppbarPositioningBinding;
 import com.sxt.chat.databinding.ActivityBottomAppbarSnackbarBinding;
 import com.sxt.chat.ui.adapter.CardAdapter;
 import com.sxt.chat.ui.material.cards.CardViewModel;
 import com.sxt.chat.utils.SnackBarHelper;
-import com.sxt.chat.utils.Strings;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseActivity;
-import com.sxt.mvvm.viewmodel.BaseViewModel;
 
 import org.jetbrains.annotations.NotNull;
 

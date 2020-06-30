@@ -4,18 +4,14 @@ import android.app.Application;
 import android.transition.ChangeTransform;
 import android.transition.TransitionManager;
 
-import androidx.databinding.ViewDataBinding;
-
 import com.sxt.chat.R;
 import com.sxt.chat.app.App;
 import com.sxt.chat.app.ViewModelFactory;
 import com.sxt.chat.databinding.FragmentTransitionBinding;
 import com.sxt.chat.ui.adapter.CardAdapter;
 import com.sxt.chat.ui.material.cards.CardViewModel;
-import com.sxt.chat.utils.Strings;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseFragment;
-import com.sxt.mvvm.viewmodel.BaseViewModel;
 
 import org.jetbrains.annotations.NotNull;
 

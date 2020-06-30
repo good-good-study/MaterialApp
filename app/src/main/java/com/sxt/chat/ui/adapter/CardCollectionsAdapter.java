@@ -11,9 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.internal.ViewUtils;
 import com.sxt.chat.R;
-import com.sxt.chat.databinding.ItemListCardBinding;
 import com.sxt.chat.databinding.ItemListCardCollectionsBinding;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseRecyclerAdapter;
 
 import java.util.List;

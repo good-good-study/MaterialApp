@@ -7,7 +7,7 @@ import com.sxt.chat.app.App;
 import com.sxt.chat.app.ViewModelFactory;
 import com.sxt.chat.databinding.ActivityCardViewCollectionsBinding;
 import com.sxt.chat.ui.adapter.CardCollectionsAdapter;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseActivity;
 
 import org.jetbrains.annotations.NotNull;

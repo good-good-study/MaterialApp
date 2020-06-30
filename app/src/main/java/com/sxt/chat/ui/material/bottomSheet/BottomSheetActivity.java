@@ -2,28 +2,19 @@ package com.sxt.chat.ui.material.bottomSheet;
 
 import android.app.Application;
 import android.graphics.Color;
-import android.view.MenuItem;
-import android.view.View;
 
-import androidx.annotation.NonNull;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-
-import com.google.android.material.behavior.HideBottomViewOnScrollBehavior;
 import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.navigation.NavigationView;
 import com.sxt.chat.R;
 import com.sxt.chat.app.App;
 import com.sxt.chat.app.ViewModelFactory;
-import com.sxt.chat.databinding.ActivityBottomNavigationBinding;
 import com.sxt.chat.databinding.ActivityBottomSheetBinding;
 import com.sxt.chat.ui.adapter.CardAdapter;
 import com.sxt.chat.ui.material.cards.CardViewModel;
 import com.sxt.chat.utils.SnackBarHelper;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseActivity;
-import com.sxt.mvvm.viewmodel.BaseViewModel;
 
 import org.jetbrains.annotations.NotNull;
 

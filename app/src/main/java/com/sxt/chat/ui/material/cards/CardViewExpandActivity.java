@@ -2,14 +2,8 @@ package com.sxt.chat.ui.material.cards;
 
 import android.app.Application;
 
-import androidx.transition.ArcMotion;
-import androidx.transition.AutoTransition;
-import androidx.transition.PathMotion;
 import androidx.transition.Transition;
-import androidx.transition.TransitionInflater;
-import androidx.transition.TransitionListenerAdapter;
 import androidx.transition.TransitionManager;
-import androidx.transition.TransitionSet;
 
 import com.sxt.chat.R;
 import com.sxt.chat.app.App;
@@ -19,7 +13,7 @@ import com.sxt.chat.ui.adapter.CardExpandAdapter;
 import com.sxt.chat.ui.adapter.listener.EventListener;
 import com.sxt.chat.view.transition.FadeInTransition;
 import com.sxt.chat.view.transition.FadeOutTransition;
-import com.sxt.mvvm.data.card.CardComment;
+import com.sxt.mvvm.model.card.CardComment;
 import com.sxt.mvvm.view.BaseActivity;
 
 import org.jetbrains.annotations.NotNull;

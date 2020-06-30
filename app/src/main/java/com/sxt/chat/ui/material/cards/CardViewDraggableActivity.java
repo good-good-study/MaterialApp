@@ -2,25 +2,17 @@ package com.sxt.chat.ui.material.cards;
 
 import android.animation.LayoutTransition;
 import android.app.Application;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.DragEvent;
-import android.view.Gravity;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 
 import androidx.annotation.NonNull;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.google.android.material.card.MaterialCardView;
 import com.sxt.chat.R;
 import com.sxt.chat.app.App;
 import com.sxt.chat.app.ViewModelFactory;
-import com.sxt.chat.databinding.ActivityCardViewBinding;
 import com.sxt.chat.databinding.ActivityCardViewDraggableBinding;
-import com.sxt.chat.ui.adapter.CardAdapter;
 import com.sxt.chat.view.draggable.DraggableCoordinatorLayout;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseActivity;
 
 import org.jetbrains.annotations.NotNull;

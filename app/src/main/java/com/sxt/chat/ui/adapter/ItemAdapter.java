@@ -1,11 +1,8 @@
 package com.sxt.chat.ui.adapter;
 
 import android.content.Context;
-import android.transition.AutoTransition;
-import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.LinearInterpolator;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -13,8 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sxt.chat.R;
 import com.sxt.chat.databinding.ItemListBinding;
-import com.sxt.chat.databinding.ItemMaterialListBinding;
-import com.sxt.mvvm.data.material.Category;
 import com.sxt.mvvm.view.BaseRecyclerAdapter;
 
 import java.util.List;

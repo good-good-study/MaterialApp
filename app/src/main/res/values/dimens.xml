@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="app_bar_height">45dp</dimen>
     <dimen name="bottom_navi_height">60dp</dimen>
+    <dimen name="search_icon_padding">12dp</dimen>
 </resources>

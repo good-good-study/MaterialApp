@@ -38,6 +38,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initObserver();
+        initView(savedInstanceState);
         initView();
     }
 
@@ -60,6 +61,11 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
 
     @Override
     public void initObserver() {
+
+    }
+
+    @Override
+    public void initView(@Nullable Bundle savedInstanceState) {
 
     }
 

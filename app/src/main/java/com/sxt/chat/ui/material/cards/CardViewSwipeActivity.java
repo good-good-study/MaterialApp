@@ -10,7 +10,7 @@ import com.sxt.chat.app.ViewModelFactory;
 import com.sxt.chat.databinding.ActivityCardViewSwipeBinding;
 import com.sxt.chat.databinding.ItemCardSwipeBinding;
 import com.sxt.chat.utils.SnackBarHelper;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseActivity;
 
 import org.jetbrains.annotations.NotNull;

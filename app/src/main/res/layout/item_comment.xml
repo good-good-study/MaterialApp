@@ -6,7 +6,7 @@
 
         <variable
             name="comment"
-            type="com.sxt.mvvm.data.card.Comment" />
+            type="com.sxt.mvvm.model.card.Comment" />
     </data>
 
     <LinearLayout

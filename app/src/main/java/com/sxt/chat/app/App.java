@@ -10,6 +10,9 @@ import com.umeng.commonsdk.UMConfigure;
 
 import org.jetbrains.annotations.NotNull;
 
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobConfig;
+
 /**
  * Created by xt.sun
  * 2020/5/9
@@ -28,6 +31,7 @@ public class App extends Application {
         super.onCreate();
         context = this;
         initUMSdk();
+        initBmob();
     }
 
     @Override
@@ -45,5 +49,16 @@ public class App extends Application {
      */
     private void initUMSdk() {
         UMConfigure.init(this, "5eb69688167edd3bbc000126", "google", 0, null);
+    }
+
+    /**
+     * 提供以下两种方式进行初始化操作
+     */
+    private void initBmob() {
+        BmobConfig config = new BmobConfig.Builder(this)
+                .setApplicationId("e83721273ee157be97206961952b99aa")
+                .setConnectTimeout(5 * 1000L)
+                .build();
+        Bmob.initialize(config);
     }
 }

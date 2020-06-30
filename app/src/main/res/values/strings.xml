@@ -4,4 +4,11 @@
     <!-- <string name="map_key">bc7d04743fd40d834d62b542490840be</string>-->
     <!--高德地图的appKey 畅玩 -->
     <string name="map_key">07c62c108f6a3c31b01c30334e0d831c</string>
+
+    <string name="permission_request_READ_EXTERNAL_STORAGE">您需要在设备的设置中\n允许%s获取手机存储的权限才能继续哟~</string>
+    <string name="permission_request_READ_CONTACTS">还未获取到相应权限哦,您可以到手机设置中允许i智护访问手机通讯录的权限哟</string>
+    <string name="permission_request_CAMERA">您需要在设备的设置中\n允许%s获取访问手机拍照的权限才能继续哟~</string>
+    <string name="permission_request_CALL_PHONE">您需要在设备的设置中\n允许%s获取打电话的权限才能继续哟~</string>
+    <string name="permission_request_WiFi">还未获取到相应权限哦,您可以到手机设置中允许%s使用位置和WiFi权限哟~</string>
+    <string name="permission_request_LOCATION">您需要在设备的设置中\n允许%s获取位置的权限才能继续哟~</string>
 </resources>

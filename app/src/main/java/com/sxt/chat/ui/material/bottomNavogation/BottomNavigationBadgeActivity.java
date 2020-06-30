@@ -4,7 +4,6 @@ import android.app.Application;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.google.android.material.badge.BadgeDrawable;
@@ -15,10 +14,8 @@ import com.sxt.chat.app.ViewModelFactory;
 import com.sxt.chat.databinding.ActivityBottomNavigationBadgeBinding;
 import com.sxt.chat.ui.adapter.CardAdapter;
 import com.sxt.chat.ui.material.cards.CardViewModel;
-import com.sxt.chat.utils.Strings;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseActivity;
-import com.sxt.mvvm.viewmodel.BaseViewModel;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#5727E5</color>
     <color name="colorAccent">#5727E5</color>
     <color name="main_body">#E8E7E7</color>
+    <color name="main_blue">#678BFD</color>
 
     <color name="ic_launcher_background">#B9D599</color>
     <color name="app_icon_color">#B9D599</color>
@@ -31,4 +32,9 @@
     <color name="point_yellow_light">#F1C1AC</color>
     <color name="point_blue_light">#6CE3F9</color>
     <color name="alpha">#80000000</color>
+    <color name="alpha_shader">#20000000</color>
+
+    <color name="blue_shader">#3317A1FF</color>
+    <color name="green_shader">#4D28DCA2</color>
+
 </resources>

@@ -10,8 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sxt.chat.R;
 import com.sxt.chat.databinding.ItemCommentBinding;
-import com.sxt.chat.databinding.ItemListBinding;
-import com.sxt.mvvm.data.card.Comment;
+import com.sxt.mvvm.model.card.Comment;
 import com.sxt.mvvm.view.BaseRecyclerAdapter;
 
 import java.util.List;

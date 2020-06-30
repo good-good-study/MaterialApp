@@ -1,31 +1,21 @@
 package com.sxt.chat.ui.material.cards;
 
 import android.app.Application;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate;
 
-import com.google.android.material.card.MaterialCardView;
 import com.sxt.chat.R;
 import com.sxt.chat.app.App;
 import com.sxt.chat.app.ViewModelFactory;
 import com.sxt.chat.databinding.ActivityCardViewListDragBinding;
-import com.sxt.chat.databinding.ActivityCardViewSelectableBinding;
-import com.sxt.chat.ui.adapter.CardAdapter;
 import com.sxt.chat.ui.adapter.CardListDragAdapter;
-import com.sxt.chat.ui.adapter.CardSelectableAdapter;
 import com.sxt.chat.view.draggable.ItemTouchHelperCallback;
 import com.sxt.chat.view.draggable.RecyclerViewAccessibilityDelegateCompat;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseActivity;
-import com.sxt.mvvm.view.BaseRecyclerAdapter;
 
 import org.jetbrains.annotations.NotNull;
 

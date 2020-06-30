@@ -3,8 +3,6 @@ package com.sxt.chat.ui.adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -13,12 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sxt.chat.R;
 import com.sxt.chat.databinding.ItemListCardDragBinding;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseRecyclerAdapter;
 
 import java.util.List;
-
-import cn.bmob.v3.util.V;
 
 /**
  * Created by xt.sun

@@ -1,8 +1,6 @@
 package com.sxt.chat.ui.material.bottomNavogation;
 
 import android.app.Application;
-import android.transition.ChangeTransform;
-import android.transition.TransitionManager;
 import android.view.MenuItem;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -12,12 +10,7 @@ import com.google.android.material.behavior.HideBottomViewOnScrollBehavior;
 import com.sxt.chat.R;
 import com.sxt.chat.app.App;
 import com.sxt.chat.app.ViewModelFactory;
-import com.sxt.chat.databinding.ActivityBottomNavigationBadgeBinding;
 import com.sxt.chat.databinding.ActivityBottomNavigationTransitionBinding;
-import com.sxt.chat.ui.adapter.CardAdapter;
-import com.sxt.chat.ui.material.cards.CardViewModel;
-import com.sxt.chat.utils.Strings;
-import com.sxt.mvvm.data.card.CardMessage;
 import com.sxt.mvvm.view.BaseActivity;
 import com.sxt.mvvm.view.BaseFragment;
 import com.sxt.mvvm.viewmodel.BaseViewModel;

@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:name=".app.App"
@@ -50,11 +52,16 @@
         <activity android:name=".ui.material.cards.CardViewCollectionsActivity" />
         <activity android:name=".ui.material.cards.CardViewExpandActivity" />
         <activity android:name=".ui.material.list.ListImageActivity" />
+        <activity android:name=".ui.material.bottomSheet.MapSheetActivity" />
         <!--高德地图-->
         <service android:name="com.amap.api.location.APSService" />
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="@string/map_key" />
+        <!--Bmob配置provider-->
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities="${applicationId}.BmobContentProvider" />
     </application>
 
 </manifest>

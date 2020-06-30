@@ -6,7 +6,7 @@
 
         <variable
             name="cardComment"
-            type="com.sxt.mvvm.data.card.CardComment" />
+            type="com.sxt.mvvm.model.card.CardComment" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

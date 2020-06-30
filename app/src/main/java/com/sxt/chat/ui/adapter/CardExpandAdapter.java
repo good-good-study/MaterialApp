@@ -1,6 +1,5 @@
 package com.sxt.chat.ui.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
@@ -12,23 +11,19 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.Transition;
-import androidx.transition.TransitionManager;
 
-import com.google.android.material.internal.ViewUtils;
 import com.sxt.chat.R;
 import com.sxt.chat.databinding.ItemCardExpandBinding;
 import com.sxt.chat.ui.adapter.listener.EventListener;
 import com.sxt.chat.utils.AnimationUtil;
 import com.sxt.chat.view.transition.FadeInTransition;
 import com.sxt.chat.view.transition.FadeOutTransition;
-import com.sxt.mvvm.data.card.CardComment;
-import com.sxt.mvvm.data.material.Category;
+import com.sxt.mvvm.model.card.CardComment;
 import com.sxt.mvvm.view.BaseRecyclerAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by xt.sun

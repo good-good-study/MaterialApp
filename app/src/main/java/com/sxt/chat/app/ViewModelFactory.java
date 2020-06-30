@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.sxt.chat.ui.MainViewModel;
 import com.sxt.chat.ui.material.MaterialViewModel;
+import com.sxt.chat.ui.material.bottomSheet.MapSheetViewModel;
 import com.sxt.chat.ui.material.cards.CardCategoryViewModel;
 import com.sxt.chat.ui.material.cards.CardViewModel;
 import com.sxt.chat.ui.material.chips.ChipsViewModel;
@@ -50,6 +51,8 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
             return (T) new CardCategoryViewModel(application);
         } else if (modelClass.isAssignableFrom(ChipsViewModel.class)) {
             return (T) new ChipsViewModel(application);
+        } else if (modelClass.isAssignableFrom(MapSheetViewModel.class)) {
+            return (T) new MapSheetViewModel(application);
         }
         throw new IllegalArgumentException("Unknown ViewModel class => " + modelClass);
     }

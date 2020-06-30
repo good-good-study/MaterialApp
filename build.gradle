@@ -50,4 +50,5 @@ ext {
     workVersion = '2.3.4'
     runnerVersion = '1.0.1'
     gsonVersion = '2.8.2'
+    cameraxVersion = "1.0.0-beta05"
 }

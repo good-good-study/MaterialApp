@@ -19,14 +19,16 @@ import com.umeng.analytics.MobclickAgent;
 public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseViewModel> extends PermissionActivity implements IBase<VM> {
     public V binding;
     public VM viewModel;
+    protected String TAG = this.getClass().getName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);
         bindViewModel();
-        initView();
         initObserver();
+        initView(savedInstanceState);
+        initView();
     }
 
     @Override
@@ -57,6 +59,11 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         binding.setVariable(getVariableId(), viewModel);
         //让ViewModel拥有View的生命周期感应
         getLifecycle().addObserver(viewModel);
+    }
+
+    @Override
+    public void initView(@Nullable Bundle savedInstanceState) {
+
     }
 
     @Override

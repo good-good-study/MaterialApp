@@ -113,4 +113,22 @@
         <item name="android:background">@drawable/divider</item>
     </style>
 
+    <style name="search_close_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+        <item name="android:paddingLeft">@dimen/search_icon_padding</item>
+        <item name="android:paddingRight">@dimen/search_icon_padding</item>
+    </style>
+
+    <style name="text_color_2_15_style">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/text_color_2</item>
+    </style>
+
+    <style name="text_color_black_style">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>

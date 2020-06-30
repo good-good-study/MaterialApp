@@ -2,7 +2,6 @@ package com.sxt.chat.ui.material.bottomNavogation;
 
 import android.app.Application;
 import android.view.MenuItem;
-import android.view.ViewGroup;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
@@ -14,10 +13,8 @@ import com.sxt.chat.app.ViewModelFactory;
 import com.sxt.chat.databinding.ActivityBottomNavigationBinding;
 import com.sxt.chat.ui.adapter.CardAdapter;
 import com.sxt.chat.ui.material.cards.CardViewModel;
-import com.sxt.chat.utils.Strings;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseActivity;
-import com.sxt.mvvm.viewmodel.BaseViewModel;
 
 import org.jetbrains.annotations.NotNull;
 

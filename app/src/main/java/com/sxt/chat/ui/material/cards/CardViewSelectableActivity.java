@@ -5,11 +5,9 @@ import android.app.Application;
 import com.sxt.chat.R;
 import com.sxt.chat.app.App;
 import com.sxt.chat.app.ViewModelFactory;
-import com.sxt.chat.databinding.ActivityCardViewBinding;
 import com.sxt.chat.databinding.ActivityCardViewSelectableBinding;
-import com.sxt.chat.ui.adapter.CardAdapter;
 import com.sxt.chat.ui.adapter.CardSelectableAdapter;
-import com.sxt.mvvm.data.card.CardMessage;
+import com.sxt.mvvm.model.card.CardMessage;
 import com.sxt.mvvm.view.BaseActivity;
 
 import org.jetbrains.annotations.NotNull;

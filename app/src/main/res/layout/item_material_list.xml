@@ -6,7 +6,7 @@
 
         <variable
             name="category"
-            type="com.sxt.mvvm.data.material.Category" />
+            type="com.sxt.mvvm.model.material.Category" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

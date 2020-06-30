@@ -2,11 +2,8 @@ package com.sxt.chat.ui.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.transition.AutoTransition;
-import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.LinearInterpolator;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -18,10 +15,8 @@ import com.sxt.chat.R;
 import com.sxt.chat.databinding.ItemMaterialListBinding;
 import com.sxt.chat.ui.adapter.listener.EventListener;
 import com.sxt.chat.utils.AnimationUtil;
-import com.sxt.mvvm.data.material.Category;
+import com.sxt.mvvm.model.material.Category;
 import com.sxt.mvvm.view.BaseRecyclerAdapter;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 

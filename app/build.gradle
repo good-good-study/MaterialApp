@@ -74,6 +74,16 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
     implementation "com.google.android:flexbox:$rootProject.flexboxVersion"
 
+    // The following line is optional, as the core library is included indirectly by camera-camera2
+    implementation "androidx.camera:camera-core:${rootProject.cameraxVersion}"
+    implementation "androidx.camera:camera-camera2:${rootProject.cameraxVersion}"
+    // If you want to additionally use the CameraX Lifecycle library
+    implementation "androidx.camera:camera-lifecycle:${rootProject.cameraxVersion}"
+    // If you want to additionally use the CameraX View class
+    implementation "androidx.camera:camera-view:1.0.0-alpha12"
+    // If you want to additionally use the CameraX Extensions library
+    implementation "androidx.camera:camera-extensions:1.0.0-alpha12"
+
     implementation 'com.amap.api:location:4.6.0'//高德地图定位包
     implementation 'com.amap.api:3dmap:7.4.0'//高德地图3d地图
 
@@ -83,7 +93,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'com.squareup.okio:okio:2.2.2'
 
-    //Library
+//Library
     implementation project(path: ':mvvm')
     implementation project(path: ':banner')
     implementation project(path: ':crop')
