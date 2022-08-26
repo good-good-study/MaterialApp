@@ -1,32 +1,15 @@
 package com.sxt.chat.utils;
 
+import static android.view.View.GONE;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.annotation.TargetApi;
-import android.content.Context;
-import android.os.Build;
-import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewAnimationUtils;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
 import android.view.animation.BounceInterpolator;
-import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
-
-import androidx.core.view.ViewCompat;
-import androidx.core.view.ViewPropertyAnimatorListener;
-
-import com.sxt.chat.R;
-
-import cn.bmob.v3.util.V;
-
-import static android.view.View.GONE;
 
 /**
  * @author Miguel Catalan Bañuls

@@ -4,14 +4,12 @@ import android.Manifest;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.app.Application;
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -32,7 +30,6 @@ import com.amap.api.maps.model.MarkerOptions;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.snackbar.Snackbar;
 import com.sxt.chat.R;
@@ -52,7 +49,6 @@ import com.sxt.mvvm.view.BaseActivity;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,17 +59,16 @@ import java.util.List;
 public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding, MapSheetViewModel> implements LocationSource {
     private AMap aMap;
     private LocationAdapter adapter;
-    private BottomSheetBehavior<View> bottomSheetBehavior;
+    private BottomSheetBehavior<View> behavior;
 
     private ValueAnimator valueAnimator;
     private float mAnimatorValue;
-    private int maxRadius = 100;
-    private int ZOOM = 17;
+    private final int maxRadius = 100;
+    private final int ZOOM = 17;
     private int peekHeight;
-    private List<Circle> listCircle = new ArrayList<>();
+    private final List<Circle> listCircle = new ArrayList<>();
     private final int REQUEST_CODE_LOCATION = 500;
     private int screenHeight;
-    private OnLocationChangedListener listener;
 
     @Override
     public int getDisplayView() {
@@ -144,7 +139,7 @@ public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding
         binding.fabMyLocation.setOnClickListener(view -> requestPermission());
         binding.fabScrolling.setOnClickListener(v -> {
             LatLng latLng = viewModel.getMyLocation();
-            openGaoDeMap(latLng, getString(R.string.app_name));
+            viewModel.openGaoDeMap(binding.coordinator, latLng, getString(R.string.app_name));
         });
         LocationManager.getInstance(this).setOnLocationListener(this::onLocationResult);
     }
@@ -158,21 +153,21 @@ public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding
         screenHeight = dm.heightPixels;
         peekHeight = (int) ViewUtils.dpToPx(this, 100);
 
-        bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheet);
-        bottomSheetBehavior.addBottomSheetCallback(bottomSheetCallback());
+        behavior = BottomSheetBehavior.from(binding.bottomSheet);
+        behavior.addBottomSheetCallback(bottomSheetCallback());
         binding.bottomSheet.post(() -> {
             //设置bottomSheet的总高度
             ViewGroup.LayoutParams params = binding.bottomSheet.getLayoutParams();
             params.height = screenHeight;
             binding.bottomSheet.setLayoutParams(params);
 
-            bottomSheetBehavior.setFitToContents(false);//展开后开度填充Parent的高度
+            behavior.setFitToContents(false);//展开后开度填充Parent的高度
             //setFitToContents 为false时，展开后距离顶部的位置（Parent会以PaddingTop填充）
-            bottomSheetBehavior.setExpandedOffset(64);
-            bottomSheetBehavior.setHalfExpandedRatio(0.45f);
-            bottomSheetBehavior.setHideable(true);
-            bottomSheetBehavior.setPeekHeight(peekHeight, true);
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+            behavior.setExpandedOffset(64);
+            behavior.setHalfExpandedRatio(0.45f);
+            behavior.setHideable(true);
+            behavior.setPeekHeight(peekHeight, true);
+            behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         });
     }
 
@@ -222,7 +217,7 @@ public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding
                     binding.mapView.scrollTo(0, -(int) (distance / 2f));
                     binding.mapView.setTranslationY(-distance);
                     //搜索栏反向位移
-                    float halfExpandedRatio = bottomSheetBehavior.getHalfExpandedRatio();
+                    float halfExpandedRatio = behavior.getHalfExpandedRatio();
                     float halfHeight = halfExpandedRatio * height;//中间状态的高度
                     if (distance > halfHeight) {
                         binding.cardView.setTranslationY(-(distance - halfHeight));
@@ -234,7 +229,7 @@ public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding
                         binding.itemChips.getRoot().setAlpha(1.0f);
                     }
                 } else {//在peekHeight位置以下 滑动(向上、向下)  slideOffset 是PeekHeight的高度的比例
-                    distance = bottomSheetBehavior.getPeekHeight() * slideOffset;
+                    distance = behavior.getPeekHeight() * slideOffset;
                 }
                 if (distance < 0) {
                     binding.fabContainer.setTranslationY(-distance);
@@ -258,7 +253,7 @@ public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding
                 LatLng latLng = new LatLng(info.getLatitude(), info.getLongitude());
                 aMap.moveCamera(CameraUpdateFactory.changeLatLng(latLng));
                 aMap.moveCamera(CameraUpdateFactory.zoomTo(ZOOM));
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
             });
             binding.recyclerView.setAdapter(adapter);
         } else {
@@ -270,10 +265,10 @@ public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding
     private void refreshState(int count) {
         if (count == 0) {
             binding.viewSwitcher.setDisplayedChild(1);
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
+            behavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
         } else {
             binding.viewSwitcher.setDisplayedChild(0);
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+            behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         }
     }
 
@@ -325,28 +320,6 @@ public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding
         valueAnimator.start();
     }
 
-    private void openGaoDeMap(LatLng latLng, String describle) {
-        try {
-            if (!new File("/data/data/" + "com.autonavi.minimap").exists()) {
-                SnackBarHelper.showSnackBar(binding.coordinator, "您还没有安装高德地图哟~", Snackbar.LENGTH_SHORT);
-                return;
-            }
-            StringBuilder loc = new StringBuilder();
-            loc.append("androidamap://viewMap?sourceApplication=XX");
-            loc.append("&poiname=");
-            loc.append(describle);
-            loc.append("&lat=");
-            loc.append(latLng.latitude);
-            loc.append("&lon=");
-            loc.append(latLng.longitude);
-            loc.append("&dev=0");
-            Intent intent = Intent.getIntent(loc.toString());
-            startActivity(intent);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     /**
      * 发起定位
      */
@@ -372,7 +345,17 @@ public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding
                     + aMapLocation.getErrorInfo());
         }
         aMap.moveCamera(CameraUpdateFactory.changeLatLng(latLng));
-        viewModel.getLocation();
+
+        List<LocationInfo> list = new ArrayList<>();
+        LocationInfo info = new LocationInfo();
+        list.add(info);
+        list.add(info);
+        list.add(info);
+        list.add(info);
+        list.add(info);
+        list.add(info);
+        refreshLocation(list);
+        behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
     }
 
     /**
@@ -384,7 +367,6 @@ public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding
 
     @Override
     public void activate(OnLocationChangedListener listener) {
-        this.listener = listener;
         requestPermission();
     }
 
@@ -408,15 +390,15 @@ public class MapSheetActivity extends BaseActivity<ActivityMapBottomSheetBinding
 
     @Override
     public void onBackPressed() {
-        switch (bottomSheetBehavior.getState()) {
+        switch (behavior.getState()) {
             case BottomSheetBehavior.STATE_EXPANDED:
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
+                behavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
                 break;
             case BottomSheetBehavior.STATE_HALF_EXPANDED:
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 break;
             case BottomSheetBehavior.STATE_COLLAPSED:
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+                behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
                 break;
             default:
                 super.onBackPressed();

@@ -87,15 +87,8 @@ dependencies {
     implementation 'com.amap.api:location:4.6.0'//高德地图定位包
     implementation 'com.amap.api:3dmap:7.4.0'//高德地图3d地图
 
-    //Bmob
-    implementation 'cn.bmob.android:bmob-sdk:3.7.8'
-    implementation "io.reactivex.rxjava2:rxjava:2.2.9"
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    implementation 'com.squareup.okio:okio:2.2.2'
-
-//Library
+    //Library
     implementation project(path: ':mvvm')
     implementation project(path: ':banner')
     implementation project(path: ':crop')
-    implementation 'androidx.annotation:annotation:1.1.0'
 }

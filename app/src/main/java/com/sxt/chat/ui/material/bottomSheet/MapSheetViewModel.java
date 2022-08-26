@@ -1,9 +1,11 @@
 package com.sxt.chat.ui.material.bottomSheet;
 
 import android.app.Application;
+import android.content.Intent;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.TextAppearanceSpan;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
@@ -11,18 +13,19 @@ import androidx.lifecycle.MutableLiveData;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.maps.AMapUtils;
 import com.amap.api.maps.model.LatLng;
+import com.google.android.material.snackbar.Snackbar;
 import com.sxt.chat.R;
-import com.sxt.chat.data.net.BmobRequest;
 import com.sxt.chat.utils.MathTool;
+import com.sxt.chat.utils.SnackBarHelper;
 import com.sxt.mvvm.model.RespLocation;
 import com.sxt.mvvm.model.location.LocationInfo;
-import com.sxt.mvvm.utils.RequestNo;
 import com.sxt.mvvm.viewmodel.BaseViewModel;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -61,7 +64,8 @@ public class MapSheetViewModel extends BaseViewModel {
     }
 
     public void getLocation() {
-        BmobRequest.getInstance(getApplication()).getLocationInfo(RequestNo.LOCATION_INFO);
+        // TODO
+//        BmobRequest.getInstance(getApplication()).getLocationInfo(RequestNo.LOCATION_INFO);
     }
 
     public void refreshMyLocation(AMapLocation aMapLocation) {
@@ -97,5 +101,27 @@ public class MapSheetViewModel extends BaseViewModel {
         span.setSpan(new TextAppearanceSpan(getApplication(), R.style.text_color_black_style), message.indexOf(appName), start, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         span.setSpan(new TextAppearanceSpan(getApplication(), R.style.text_color_2_15_style), start, message.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         return span;
+    }
+
+    public void openGaoDeMap(View view, LatLng latLng, String describle) {
+        try {
+            if (!new File("/data/data/" + "com.autonavi.minimap").exists()) {
+                SnackBarHelper.showSnackBar(view, "您还没有安装高德地图哟~", Snackbar.LENGTH_SHORT);
+                return;
+            }
+            StringBuilder loc = new StringBuilder();
+            loc.append("androidamap://viewMap?sourceApplication=XX");
+            loc.append("&poiname=");
+            loc.append(describle);
+            loc.append("&lat=");
+            loc.append(latLng.latitude);
+            loc.append("&lon=");
+            loc.append(latLng.longitude);
+            loc.append("&dev=0");
+            Intent intent = Intent.getIntent(loc.toString());
+            getApplication().startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
